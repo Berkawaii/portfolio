@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas-bg: #F5EFE6;
+    --canvas-cream: #F4EBD9;
+    --ink-black: #000000;
+    --tangerine: #FF5400;
+    --bubblegum: #FF70A6;
+    --retro-blue: #70D6FF;
+    --acid-lime: #CCFF00;
+  }
+
+  body {
+    background-color: var(--canvas-bg);
+    color: var(--ink-black);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--tangerine);
+    color: #ffffff;
+  }
+}
+
+/* Comic ink utilities */
+.border-ink-3 {
+  border-width: 3px;
+  border-color: #000000;
+}
+
+.border-ink-4 {
+  border-width: 4px;
+  border-color: #000000;
+}
+
+.shadow-ink {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.shadow-ink-lg {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.shadow-ink-xl {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.shadow-ink-hover:hover {
+  box-shadow: 8px 8px 0px 0px #000000;
+  transform: translate(-2px, -2px);
+}
+
+.shadow-ink-active:active {
+  box-shadow: 2px 2px 0px 0px #000000;
+  transform: translate(2px, 2px);
+}
+
+/* Authentic comic halftone textures */
+.comic-halftone {
+  background-image: radial-gradient(#000000 15%, transparent 16%);
+  background-size: 10px 10px;
+}
+
+.comic-halftone-light {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 15%, transparent 16%);
+  background-size: 8px 8px;
+}
+
+.comic-hatch {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 6px,
+    rgba(0, 0, 0, 0.08) 6px,
+    rgba(0, 0, 0, 0.08) 9px
+  );
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5EFE6;
+  border-left: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF5400;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* Smooth Scroll & Lenis */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Comic Shimmer & Animations */
+@keyframes comic-bob {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes comic-pulse-border {
+  0%, 100% {
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  50% {
+    box-shadow: 12px 12px 0px 0px #FF5400;
+  }
+}
+
+@keyframes comic-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes comic-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+.animate-comic-bob {
+  animation: comic-bob 2.2s ease-in-out infinite;
+}
+
+.animate-comic-pulse {
+  animation: comic-pulse-border 2s ease-in-out infinite;
+}
+
+.animate-comic-stripes {
+  background-size: 40px 40px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  animation: comic-stripes 0.8s linear infinite;
+}
+
+.comic-shimmer-box {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 235, 217, 0.5) 0%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(244, 235, 217, 0.5) 100%
+  );
+  background-size: 200% 100%;
+  animation: comic-shimmer 1.8s infinite;
+}

@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public portfolio read access
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    match /experience/{expId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
