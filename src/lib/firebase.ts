@@ -1105,6 +1105,13 @@ export async function uploadImageFile(file: File): Promise<string> {
 
 export const SITE_CONTENT_LOCAL_STORAGE_KEY = "berkay_portfolio_site_content_v3";
 
+export function sanitizeResumeUrl(url?: string): string {
+  if (!url || url === "/berkay_acar_cv.pdf" || url.endsWith("/berkay_acar_cv.pdf") || url.endsWith("_cv.pdf")) {
+    return "/Berkay_Acar_Resume.pdf";
+  }
+  return url;
+}
+
 export function getLocalSiteContent(): SiteContent {
   if (typeof window === "undefined") return DEFAULT_SITE_CONTENT;
   try {
@@ -1115,7 +1122,7 @@ export function getLocalSiteContent(): SiteContent {
         return {
           ...DEFAULT_SITE_CONTENT,
           ...parsed,
-          resumeUrl: parsed.resumeUrl !== undefined ? parsed.resumeUrl : DEFAULT_SITE_CONTENT.resumeUrl,
+          resumeUrl: sanitizeResumeUrl(parsed.resumeUrl),
           theme: { ...DEFAULT_SITE_CONTENT.theme, ...(parsed.theme || {}) },
           sectionsOrder:
             parsed.sectionsOrder && Array.isArray(parsed.sectionsOrder) && parsed.sectionsOrder.length > 0
@@ -1231,7 +1238,7 @@ export async function fetchSiteContent(): Promise<{
         const merged: SiteContent = {
           ...DEFAULT_SITE_CONTENT,
           ...data,
-          resumeUrl: data.resumeUrl !== undefined ? data.resumeUrl : DEFAULT_SITE_CONTENT.resumeUrl,
+          resumeUrl: sanitizeResumeUrl(data.resumeUrl),
           theme: { ...DEFAULT_SITE_CONTENT.theme, ...(data.theme || {}) },
           sectionsOrder:
             data.sectionsOrder && Array.isArray(data.sectionsOrder) && data.sectionsOrder.length > 0

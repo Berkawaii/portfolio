@@ -22,6 +22,10 @@ export function Navbar({
   email = "acar.berkai@gmail.com",
 }: NavbarProps) {
   const { lang, setLang } = useLanguage();
+  const targetResumeUrl =
+    !resumeUrl || resumeUrl === "/berkay_acar_cv.pdf" || resumeUrl.endsWith("_cv.pdf")
+      ? "/Berkay_Acar_Resume.pdf"
+      : resumeUrl;
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#F5EFE6] border-b-4 border-black">
@@ -96,7 +100,7 @@ export function Navbar({
 
           {/* Resume Download CTA */}
           <a
-            href={resumeUrl}
+            href={targetResumeUrl}
             download="Berkay_Acar_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
