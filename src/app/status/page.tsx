@@ -37,7 +37,7 @@ export default function StatusPage() {
     setIsPinging(true);
     const start = performance.now();
     try {
-      await fetch("/berkay_acar_cv.pdf", { method: "HEAD", cache: "no-store" });
+      await fetch("/Berkay_Acar_Resume.pdf", { method: "HEAD", cache: "no-store" });
       const duration = Math.round(performance.now() - start);
       setLatency(duration);
     } catch {

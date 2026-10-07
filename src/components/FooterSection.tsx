@@ -146,7 +146,7 @@ export function FooterSection({ footerSection }: FooterSectionProps) {
                       ? (footerSection.githubUrl.startsWith("http://") || footerSection.githubUrl.startsWith("https://")
                           ? footerSection.githubUrl
                           : `https://${footerSection.githubUrl}`)
-                      : "https://github.com/berkayacar"
+                      : "https://github.com/Berkawaii"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -156,10 +156,29 @@ export function FooterSection({ footerSection }: FooterSectionProps) {
                   <span>GitHub</span>
                 </a>
               )}
+              <a
+                href="https://github.com/Berkawaii/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#CCFF00] bg-[#CCFF00]/10 text-[#CCFF00] hover:bg-[#CCFF00] hover:text-black font-bold transition-all shadow-[2px_2px_0px_#CCFF00]"
+                title="View Source on GitHub"
+              >
+                <GithubLogo size={16} weight="bold" />
+                <span>{lang === "en" ? "PORTFOLIO REPO" : "KAYNAK KOD"}</span>
+              </a>
             </div>
 
             {/* System Status & Terminal Links */}
             <div className="pt-2 flex flex-wrap items-center gap-3 font-mono text-[11px] text-white/50">
+              <a
+                href="https://github.com/Berkawaii/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#CCFF00] hover:underline flex items-center gap-1.5 transition-colors font-bold text-white/80"
+              >
+                <span>[GITHUB REPO]</span>
+              </a>
+              <span>•</span>
               <Link
                 href="/status"
                 className="hover:text-[#CCFF00] hover:underline flex items-center gap-1.5 transition-colors"

@@ -18,7 +18,7 @@ interface NavbarProps {
 }
 
 export function Navbar({
-  resumeUrl = "/berkay_acar_cv.pdf",
+  resumeUrl = "/Berkay_Acar_Resume.pdf",
   email = "acar.berkai@gmail.com",
 }: NavbarProps) {
   const { lang, setLang } = useLanguage();
@@ -97,7 +97,7 @@ export function Navbar({
           {/* Resume Download CTA */}
           <a
             href={resumeUrl}
-            download="Berkay_Acar_CV.pdf"
+            download="Berkay_Acar_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 border-2 border-black bg-[#CCFF00] text-black font-mono text-xs font-bold uppercase tracking-wider shadow-ink hover:bg-[#b8e600] active:translate-x-0.5 active:translate-y-0.5 transition-all focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"

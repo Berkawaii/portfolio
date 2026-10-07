@@ -56,7 +56,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
                     ? (hero.githubUrl.startsWith("http://") || hero.githubUrl.startsWith("https://")
                         ? hero.githubUrl
                         : `https://${hero.githubUrl}`)
-                    : "https://github.com/berkayacar"
+                    : "https://github.com/Berkawaii"
                 }
                 target="_blank"
                 rel="noopener noreferrer"

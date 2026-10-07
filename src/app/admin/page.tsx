@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   auth,
@@ -44,6 +44,7 @@ import {
   EyeSlash,
   ArrowUp,
   ArrowDown,
+  ShieldCheck,
 } from "@phosphor-icons/react";
 import { ComicSkaterSkull, ComicStickerBadge } from "@/components/ComicSkulls";
 import { AdminImageUploader } from "@/components/AdminImageUploader";
@@ -57,6 +58,11 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Google reCAPTCHA state
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const recaptchaContainerRef = useRef<HTMLDivElement>(null);
+  const recaptchaWidgetIdRef = useRef<number | null>(null);
 
   // Content state
   const [content, setContent] = useState<SiteContent>(DEFAULT_SITE_CONTENT);
@@ -89,6 +95,68 @@ export default function AdminPage() {
     return () => unsubscribe();
   }, []);
 
+  // Google reCAPTCHA v2 Script Injection & Initialization
+  useEffect(() => {
+    if (user) return; // Only needed on login gate
+
+    let pollTimer: NodeJS.Timeout;
+
+    const renderWidget = () => {
+      const grecaptcha = (window as any).grecaptcha;
+      if (
+        grecaptcha &&
+        typeof grecaptcha.render === "function" &&
+        recaptchaContainerRef.current &&
+        recaptchaWidgetIdRef.current === null
+      ) {
+        try {
+          const siteKey =
+            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+            "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+          const id = grecaptcha.render(recaptchaContainerRef.current, {
+            sitekey: siteKey,
+            callback: () => {
+              setCaptchaVerified(true);
+            },
+            "expired-callback": () => {
+              setCaptchaVerified(false);
+            },
+            "error-callback": () => {
+              setCaptchaVerified(false);
+            },
+          });
+          recaptchaWidgetIdRef.current = id;
+        } catch (err) {
+          console.warn("reCAPTCHA notice:", err);
+        }
+      } else if (!grecaptcha || typeof grecaptcha.render !== "function") {
+        pollTimer = setTimeout(renderWidget, 400);
+      }
+    };
+
+    const scriptId = "google-recaptcha-v2-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        const grecaptcha = (window as any).grecaptcha;
+        if (grecaptcha && grecaptcha.ready) {
+          grecaptcha.ready(renderWidget);
+        } else {
+          pollTimer = setTimeout(renderWidget, 500);
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      renderWidget();
+    }
+
+    return () => clearTimeout(pollTimer);
+  }, [user]);
+
   // Fetch current site content
   useEffect(() => {
     fetchSiteContent().then((res) => {
@@ -100,6 +168,10 @@ export default function AdminPage() {
     e.preventDefault();
     if (!auth) {
       setLoginError("Firebase Auth client is not initialized.");
+      return;
+    }
+    if (!captchaVerified) {
+      setLoginError("SECURITY GATE: Please complete the Google reCAPTCHA verification.");
       return;
     }
     setIsSubmitting(true);
@@ -117,6 +189,13 @@ export default function AdminPage() {
       }
     } finally {
       setIsSubmitting(false);
+      const grecaptcha = (window as any).grecaptcha;
+      if (grecaptcha && recaptchaWidgetIdRef.current !== null) {
+        try {
+          grecaptcha.reset(recaptchaWidgetIdRef.current);
+          setCaptchaVerified(false);
+        } catch {}
+      }
     }
   };
 
@@ -606,9 +685,29 @@ export default function AdminPage() {
               />
             </div>
 
+            {/* Google reCAPTCHA v2 Neo-Brutalist Frame */}
+            <div className="p-3 border-3 border-black bg-[#F5EFE6] shadow-ink space-y-2">
+              <div className="flex items-center justify-between text-[11px] font-mono font-bold uppercase text-black/70">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck size={16} className="text-black" weight="bold" />
+                  <span>GOOGLE RECAPTCHA v2</span>
+                </span>
+                <span
+                  className={`px-1.5 py-0.5 border border-black font-mono text-[10px] font-bold ${
+                    captchaVerified ? "bg-[#CCFF00] text-black" : "bg-white text-black/60"
+                  }`}
+                >
+                  {captchaVerified ? "VERIFIED" : "REQUIRED"}
+                </span>
+              </div>
+              <div className="flex justify-center overflow-x-auto py-1 min-h-[78px] items-center">
+                <div ref={recaptchaContainerRef} />
+              </div>
+            </div>
+
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !captchaVerified}
               className="w-full py-3.5 border-4 border-black bg-[#CCFF00] text-black font-mono text-sm font-bold uppercase tracking-wider shadow-ink hover:bg-[#b8e600] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer disabled:opacity-50"
             >
               {isSubmitting ? "AUTHENTICATING..." : "SIGN IN WITH FIREBASE"}
@@ -990,7 +1089,7 @@ export default function AdminPage() {
               <input
                 type="text"
                 value={content.resumeUrl || ""}
-                placeholder="/berkay_acar_cv.pdf"
+                placeholder="/Berkay_Acar_Resume.pdf"
                 onChange={(e) =>
                   setContent({
                     ...content,
@@ -1000,7 +1099,7 @@ export default function AdminPage() {
                 className="w-full px-3 py-2 border-2 border-black font-mono text-xs font-bold"
               />
               <span className="text-[10px] font-mono text-black/60 block">
-                Controls the download file for the CV / RESUME button in the top header (e.g. /berkay_acar_cv.pdf or external Drive/Cloud URL).
+                Controls the download file for the RESUME button in the top header (e.g. /Berkay_Acar_Resume.pdf or external Drive/Cloud URL).
               </span>
             </div>
           </div>
@@ -1200,7 +1299,7 @@ export default function AdminPage() {
                       },
                     })
                   }
-                  placeholder="https://github.com/berkayacar"
+                  placeholder="https://github.com/Berkawaii"
                   className="w-full px-3 py-2 border-2 border-black font-mono text-xs font-bold"
                 />
                 <span className="text-[10px] font-mono text-black/60 block mt-1">
@@ -3826,7 +3925,7 @@ export default function AdminPage() {
                   <input
                     type="text"
                     value={content.footerSection.githubUrl || ""}
-                    placeholder="https://github.com/berkayacar"
+                    placeholder="https://github.com/Berkawaii"
                     onChange={(e) =>
                       setContent({
                         ...content,

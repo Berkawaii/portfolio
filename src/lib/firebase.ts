@@ -194,7 +194,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     cardBg: "#FFFFFF",
     borderColor: "#000000",
   },
-  resumeUrl: "/berkay_acar_cv.pdf",
+  resumeUrl: "/Berkay_Acar_Resume.pdf",
   sectionsOrder: [
     {
       id: "hero",
@@ -275,7 +275,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "POZİTİF KAL",
     },
     imagePath: "/assets/comic_hero_mascot.jpg",
-    githubUrl: "https://github.com/berkayacar",
+    githubUrl: "https://github.com/Berkawaii",
   },
   metrics: [
     {
@@ -675,7 +675,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           "Redis Pub/Sub",
         ],
         imagePath: "/assets/comic_realtime_engine.jpg",
-        githubUrl: "https://github.com/berkayacar/cruwells-vox",
+        githubUrl: "https://github.com/Berkawaii/cruwells-vox",
         liveUrl: "https://cruwellsvox.dev",
       },
       {
@@ -719,7 +719,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           "TypeScript",
           "Tailwind CSS",
         ],
-        githubUrl: "https://github.com/berkayacar/syntax-factory",
+        githubUrl: "https://github.com/Berkawaii",
         liveUrl: "https://syntaxfactory.dev",
       },
       {
@@ -762,7 +762,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           "Web Animations API",
           "Tailwind CSS",
         ],
-        githubUrl: "https://github.com/berkayacar/gri-archive",
+        githubUrl: "https://github.com/Berkawaii",
         liveUrl: "https://griarchive.com",
       },
     ],
@@ -980,7 +980,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "ÇEVRİMİÇİ PROFİLLER:",
     },
     linkedinUrl: "https://linkedin.com/in/berkayacar",
-    githubUrl: "https://github.com/berkayacar",
+    githubUrl: "https://github.com/Berkawaii",
   },
 };
 

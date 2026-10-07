@@ -232,7 +232,7 @@ portfolio/
 |-- tsconfig.json             # TypeScript strict compilation rules
 |-- public/
 |   |-- assets/               # Production case study imagery and project posters
-|   `-- berkay_acar_cv.pdf    # Direct-access engineering curriculum vitae
+|   `-- Berkay_Acar_Resume.pdf # Direct-access engineering curriculum vitae
 `-- src/
     |-- context/
     |   `-- LanguageContext.tsx      # Dual-language i18n provider (EN / TR)
@@ -334,5 +334,5 @@ firebase deploy --only firestore:rules
 - Architect: Berkay Acar (Senior Full-Stack & Mobile Software Architect)
 - Portfolio: https://berkayacar.web.app
 - GitHub: https://github.com/Berkawaii
-- LinkedIn: https://www.linkedin.com/in/berkay-acar-3b2a261a7/
+- LinkedIn: https://www.linkedin.com/in/im-berkay/
 - License: MIT License - See LICENSE for terms.
