@@ -985,9 +985,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
 };
 
 const firebaseConfig = {
-  apiKey:
-    process.env.NEXT_PUBLIC_FIREBASE_API_KEY ||
-    "",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "",
   authDomain:
     process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ||
     "berkay-58575.firebaseapp.com",
@@ -996,10 +994,9 @@ const firebaseConfig = {
     process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ||
     "berkay-58575.firebasestorage.app",
   messagingSenderId:
-    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "352017712096",
+    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "",
   appId:
-    process.env.NEXT_PUBLIC_FIREBASE_APP_ID ||
-    "1:352017712096:web:a38eff57ccea6cdd36e185",
+    process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "",
 };
 
 let app: FirebaseApp | null = null;
