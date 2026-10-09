@@ -32,6 +32,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
 
             {/* 2. Headline (Max 2 lines desktop) */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold uppercase tracking-tight leading-[0.95] text-black">
+              <span className="sr-only">Berkay Acar : </span>
               {hero.headline[lang] || hero.headline.en}
             </h1>
 

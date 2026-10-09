@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -18,6 +18,12 @@ const spaceMono = Space_Mono({
 });
 
 const SITE_URL = "https://berkayacar.web.app";
+
+export const viewport: Viewport = {
+  themeColor: "#FF5400",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -84,6 +90,12 @@ export const metadata: Metadata = {
   verification: {
     google: "googleb32cd446bf43c2b0",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  manifest: "/manifest.json",
 };
 
 const jsonLd = {

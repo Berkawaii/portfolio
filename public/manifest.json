@@ -1,0 +1,16 @@
+{
+  "name": "Berkay Acar : Senior Full Stack & Mobile Developer",
+  "short_name": "Berkay Acar",
+  "description": "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5EFE6",
+  "theme_color": "#FF5400",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
