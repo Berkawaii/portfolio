@@ -44,7 +44,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             {/* 4. CTAs */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
-                href="#architecture"
+                href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3.5 border-4 border-black bg-[#FF5400] text-white font-mono text-sm font-bold uppercase tracking-wider shadow-ink hover:shadow-ink-lg hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"
               >
                 <span>{hero.primaryCta[lang] || hero.primaryCta.en}</span>

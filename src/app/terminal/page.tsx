@@ -235,10 +235,10 @@ dynamic texture LOD streaming, ambient occlusion shaders, and spatial navigation
     size: "2.1K",
     date: "Oct 07 15:30",
     content: `================================================================================
-BERKAY ACAR - ARCHITECTURAL PORTFOLIO & DIAGNOSTICS CONSOLE
+BERKAY ACAR - ENGINEERING PORTFOLIO & DIAGNOSTICS CONSOLE
 ================================================================================
 Welcome to the interactive engineering terminal for Berkay Acar, Senior Full-Stack
-and Mobile Systems Architect.
+and Mobile Engineer.
 
 QUICK START:
   - Type "projects" to view the complete production systems breakdown.
@@ -272,7 +272,7 @@ DISTRIBUTED   : WebSockets Pipelines, WebRTC, Mono WASM Compilation, Zero-Trust 
     date: "Oct 07 14:00",
     content: `{
   "name": "Berkay Acar",
-  "title": "Senior Full-Stack & Mobile Software Architect",
+  "title": "Senior Full-Stack & Mobile Engineer",
   "email": "acar.berkai@gmail.com",
   "phone": "+90 554 428 04 04",
   "location": "Istanbul, Turkey",
@@ -355,15 +355,15 @@ export default function TerminalPage() {
  |  _ \\|  _| | |_) | ' /   / _ \\\\ V /    / _ \\| |     / _ \\ | |_) |
  | |_) | |___|  _ <| . \\  / ___ \\| |    / ___ \\ |___ / ___ \\|  _ < 
  |____/|_____|_| \\_\\_|\\_\\/_/   \\_\\_|   /_/   \\_\\____/_/   \\_\\_| \\_\\
-      -- SENIOR FULL STACK & DISTRIBUTED SYSTEMS ARCHITECT --
+       -- SENIOR FULL STACK & MOBILE ENGINEER --
       `,
       },
       {
         type: "system",
         text: `[SYSTEM KERNEL BOOT COMPLETE]
-Interactive Architecture Terminal v3.0 [TTY-1] initialized.
+Interactive Engineering Terminal v3.0 [TTY-1] initialized.
 Virtual filesystem mounted at /home/guest (~).
-Type "help" for command matrix, "projects" for architecture, or "resume" to download PDF.`,
+Type "help" for command matrix, "projects" for case studies, or "resume" to download PDF.`,
       },
     ]);
   };
@@ -438,9 +438,9 @@ Type "help" for command matrix, "projects" for architecture, or "resume" to down
           type: "output",
           text: `AVAILABLE COMMANDS:
   help              - Display this command matrix
-  whoami            - Architect profile, experience & leadership
+  whoami            - Engineer profile, experience & stack
   skills            - Technical competency arsenal (.NET, Flutter, Cloud, WebGL)
-  projects          - Comprehensive enterprise & R&D projects overview (from README)
+  projects          - Comprehensive enterprise case studies overview
   cd <dir>          - Navigate virtual directories (e.g. "cd projects", "cd ..")
   ls / dir          - List files & directories in current path
   cat <file>        - Inspect file contents (e.g. "cat architecture.md")
@@ -461,14 +461,14 @@ Type "help" for command matrix, "projects" for architecture, or "resume" to down
         newHistory.push({
           type: "output",
           text: `[PROFILE: BERKAY ACAR]
-TITLE     : Senior Full-Stack & Mobile Software Architect
-EXPERIENCE: 5+ Years High-Concurrency Distributed Systems & Mobile Engineering
+TITLE     : Senior Full-Stack & Mobile Engineer
+EXPERIENCE: 4.5+ Years High-Concurrency Distributed Systems & Mobile Engineering
 LOCATION  : Istanbul, Turkey
 PORTFOLIO : https://berkayacar.web.app
 GITHUB    : https://github.com/Berkawaii
 LINKEDIN  : https://linkedin.com/in/im-berkay
-SUMMARY   : Architected mission-critical enterprise platforms serving 30,000+ corporate
-            clients with sub-50ms latency, high-throughput microservices, and 99.99% uptime.`,
+SUMMARY   : Engineered mission-critical enterprise platforms serving 30,000+ corporate
+            clients with sub-50ms latency, high-throughput microservices, and reliable uptime.`,
         });
         break;
 

@@ -37,7 +37,7 @@ export function CredentialsGrid({ credentialsSection }: CredentialsGridProps) {
                   <Certificate size={22} weight="bold" />
                 </div>
                 <span className="font-mono text-xs font-bold px-2 py-0.5 border border-black bg-black text-white">
-                  {lang === "en" ? "VERIFIED CERTS" : "ONAYLI SERTİFİKALAR"}
+                  {lang === "en" ? "INDUSTRY CERTS" : "SERTİFİKALAR"}
                 </span>
               </div>
               <h3 className="text-xl font-extrabold uppercase tracking-tight text-black mb-4">

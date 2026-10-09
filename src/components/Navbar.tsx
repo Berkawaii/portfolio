@@ -43,7 +43,7 @@ export function Navbar({
               BERKAY ACAR
             </span>
             <span className="font-mono text-[11px] font-bold uppercase text-black/70 leading-tight">
-              {lang === "en" ? "SYSTEMS ARCHITECT" : "SİSTEM MİMARI"}
+              {lang === "en" ? "FULL STACK & MOBILE ENGINEER" : "FULL STACK & MOBİL MÜHENDİS"}
             </span>
           </div>
         </a>
@@ -51,18 +51,18 @@ export function Navbar({
         {/* Desktop Single-Line Navigation */}
         <nav className="hidden md:flex items-center gap-6 font-mono text-xs font-bold uppercase tracking-wider">
           <a
-            href="#architecture"
+            href="#projects"
             className="flex items-center gap-1.5 hover:text-[#FF5400] transition-colors focus:outline-none focus:ring-1 focus:ring-black"
           >
             <HardDrives size={16} weight="bold" />
-            <span>{lang === "en" ? "Architecture" : "Mimari"}</span>
+            <span>{lang === "en" ? "Work & Projects" : "Projeler"}</span>
           </a>
           <a
             href="#arsenal"
             className="flex items-center gap-1.5 hover:text-[#FF5400] transition-colors focus:outline-none focus:ring-1 focus:ring-black"
           >
             <Cpu size={16} weight="bold" />
-            <span>{lang === "en" ? "Tech Arsenal" : "Teknik Cephane"}</span>
+            <span>{lang === "en" ? "Skills" : "Yetenekler"}</span>
           </a>
           <a
             href="#lab"

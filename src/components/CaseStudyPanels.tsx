@@ -19,7 +19,7 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
   const secondaryItems = items.slice(1);
 
   return (
-    <section id="architecture" className="py-16 sm:py-24 bg-[#F5EFE6] border-b-4 border-black">
+    <section id="projects" className="py-16 sm:py-24 bg-[#F5EFE6] border-b-4 border-black">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         {/* Section Heading: Stacked cleanly, NO split-header, NO eyebrow */}
         <div className="mb-12">
@@ -34,9 +34,9 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
         {/* Featured Case Study 1: UniCoWallet Full Comic Hero Panel */}
         {featuredItem && (
           <div className="border-4 border-black bg-white shadow-ink-xl p-6 sm:p-8 mb-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left: Graphic Comic Novel Panel Art */}
-              <div className="lg:col-span-6 relative">
+              <div className="lg:col-span-5 relative">
                 <div className="absolute -top-3 -left-3 z-10">
                   <ComicStickerBadge
                     text={featuredItem.category[lang] || featuredItem.category.en}
@@ -59,56 +59,103 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
                   <span>{featuredItem.client[lang] || featuredItem.client.en}</span>
                   <span>{featuredItem.period}</span>
                 </div>
-              </div>
 
-              {/* Right: Technical Architecture Breakdown */}
-              <div className="lg:col-span-6 space-y-4">
-                <div className="inline-block px-2.5 py-0.5 border border-black bg-black text-white font-mono text-xs font-bold uppercase">
-                  {featuredItem.role[lang] || featuredItem.role.en}
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-black leading-tight">
-                  {featuredItem.title[lang] || featuredItem.title.en}
-                </h3>
-                <p className="text-sm sm:text-base text-black/80 leading-relaxed">
-                  {featuredItem.summary[lang] || featuredItem.summary.en}
-                </p>
-
-                {/* Architecture Details Box */}
-                <div className="border-2 border-black bg-[#F4EBD9] p-3 shadow-ink">
-                  <div className="font-mono text-xs font-bold uppercase text-[#FF5400] mb-1">
-                    {lang === "en" ? "ARCHITECTURE DETAILS:" : "MİMARİ DETAYLAR:"}
-                  </div>
-                  <div className="font-mono text-xs text-black/85 leading-relaxed">
-                    {featuredItem.architectureDetails[lang] || featuredItem.architectureDetails.en}
-                  </div>
-                </div>
-
-                {/* Impact Metrics */}
-                <div className="space-y-1.5 pt-1">
-                  {(lang === "en"
-                    ? featuredItem.impactMetricsEn
-                    : featuredItem.impactMetricsTr
-                  ).map((metric, i) => (
-                    <div key={i} className="flex items-start gap-2 font-mono text-xs text-black/90">
-                      <CheckCircle size={16} weight="fill" className="text-[#FF5400] shrink-0 mt-0.5" />
-                      <span>{metric}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech Stack Pills */}
-                <div className="pt-2">
+                {/* Tech Stack Pills under art on desktop */}
+                <div className="mt-4 pt-3 border-t-2 border-black">
                   <div className="font-mono text-xs font-bold uppercase text-black/70 mb-2">
                     {lang === "en" ? "PRODUCTION STACK:" : "ÜRETİM TEKNOLOJİLERİ:"}
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {featuredItem.techStack.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 border-2 border-black bg-white font-mono text-xs font-bold shadow-[2px_2px_0px_#000000]"
+                        className="px-2 py-0.5 border-2 border-black bg-white font-mono text-xs font-bold shadow-[2px_2px_0px_#000000]"
                       >
                         {t}
                       </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Technical Engineering Case Study Breakdown */}
+              <div className="lg:col-span-7 space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-0.5 border border-black bg-black text-white font-mono text-xs font-bold uppercase">
+                    {featuredItem.role[lang] || featuredItem.role.en}
+                  </span>
+                  <span className="font-mono text-xs font-bold text-black/60 uppercase">
+                    CASE STUDY // 01
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-black leading-tight">
+                  {featuredItem.title[lang] || featuredItem.title.en}
+                </h3>
+                
+                <p className="text-sm sm:text-base text-black/85 leading-relaxed font-medium">
+                  {featuredItem.summary[lang] || featuredItem.summary.en}
+                </p>
+
+                {/* Case Study Core: Problem → Approach → Trade-offs */}
+                {featuredItem.problem && (
+                  <div className="space-y-3 border-2 border-black bg-[#F4EBD9] p-4 shadow-ink">
+                    <div>
+                      <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#FF5400] mb-0.5">
+                        {lang === "en" ? "01. PROBLEM & CONTEXT" : "01. PROBLEM VE BAĞLAM"}
+                      </div>
+                      <p className="font-sans text-xs sm:text-sm text-black/90 leading-relaxed font-medium">
+                        {featuredItem.problem[lang] || featuredItem.problem.en}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 border-t border-black/20">
+                      <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-black mb-0.5">
+                        {lang === "en" ? "02. ENGINEERING APPROACH" : "02. MÜHENDİSLİK YAKLAŞIMI"}
+                      </div>
+                      <p className="font-sans text-xs sm:text-sm text-black/90 leading-relaxed font-medium">
+                        {featuredItem.approach?.[lang] || featuredItem.approach?.en || featuredItem.architectureDetails[lang]}
+                      </p>
+                    </div>
+
+                    {featuredItem.tradeoffs && (
+                      <div className="pt-2 border-t border-black/20">
+                        <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#0066cc] mb-0.5">
+                          {lang === "en" ? "03. ARCHITECTURAL TRADE-OFF" : "03. MİMARİ TERCİH / TRADE-OFF"}
+                        </div>
+                        <p className="font-sans text-xs text-black/85 leading-relaxed italic">
+                          {featuredItem.tradeoffs[lang] || featuredItem.tradeoffs.en}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {!featuredItem.problem && (
+                  <div className="border-2 border-black bg-[#F4EBD9] p-3 shadow-ink">
+                    <div className="font-mono text-xs font-bold uppercase text-[#FF5400] mb-1">
+                      {lang === "en" ? "SYSTEM SPECIFICATION:" : "SİSTEM ÖZELLİKLERİ:"}
+                    </div>
+                    <div className="font-mono text-xs text-black/85 leading-relaxed">
+                      {featuredItem.architectureDetails[lang] || featuredItem.architectureDetails.en}
+                    </div>
+                  </div>
+                )}
+
+                {/* Measurable Impact Metrics */}
+                <div className="pt-2">
+                  <div className="font-mono text-xs font-bold uppercase text-black/70 mb-2">
+                    {lang === "en" ? "04. MEASURABLE OUTCOMES:" : "04. ÖLÇÜLEBİLİR SONUÇLAR:"}
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {(lang === "en"
+                      ? featuredItem.impactMetricsEn
+                      : featuredItem.impactMetricsTr
+                    ).map((metric, i) => (
+                      <div key={i} className="flex items-start gap-2 font-mono text-xs text-black/90 bg-white p-2 border border-black shadow-[2px_2px_0px_#000000]">
+                        <CheckCircle size={16} weight="fill" className="text-[#FF5400] shrink-0 mt-0.5" />
+                        <span className="leading-tight">{metric}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -119,25 +166,32 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
 
         {/* Secondary Asymmetric Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {secondaryItems.map((item) => (
+          {secondaryItems.map((item, idx) => (
             <div
               key={item.id}
               className="border-4 border-black bg-white shadow-ink-lg p-6 sm:p-8 flex flex-col justify-between"
             >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="px-2.5 py-0.5 border border-black bg-[#70D6FF] font-mono text-xs font-bold uppercase">
-                    {item.category[lang] || item.category.en}
-                  </span>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 border border-black bg-[#70D6FF] font-mono text-xs font-bold uppercase">
+                      {item.category[lang] || item.category.en}
+                    </span>
+                    <span className="px-2 py-0.5 border border-black bg-black text-white font-mono text-[11px] font-bold uppercase">
+                      {item.role[lang] || item.role.en}
+                    </span>
+                  </div>
                   <span className="font-mono text-xs font-bold text-black/75">
                     {item.period}
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-black mb-3">
+
+                <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-black">
                   {item.title[lang] || item.title.en}
                 </h3>
+
                 {item.imagePath && (
-                  <div className="relative aspect-[16/9] w-full border-2 border-black overflow-hidden mb-4 bg-[#F5EFE6] shadow-[2px_2px_0px_#000000]">
+                  <div className="relative aspect-[16/9] w-full border-2 border-black overflow-hidden bg-[#F5EFE6] shadow-[2px_2px_0px_#000000]">
                     <Image
                       src={item.imagePath}
                       alt={`${item.title[lang] || item.title.en} artwork`}
@@ -147,25 +201,59 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
                     />
                   </div>
                 )}
-                <p className="text-sm text-black/80 leading-relaxed mb-4">
+
+                <p className="text-sm text-black/85 leading-relaxed font-medium">
                   {item.summary[lang] || item.summary.en}
                 </p>
 
-                <ul className="space-y-2 mb-6 font-mono text-xs">
-                  {(lang === "en" ? item.impactMetricsEn : item.impactMetricsTr).map((metric, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <CheckCircle size={16} weight="fill" className="text-[#FF5400] shrink-0 mt-0.5" />
-                      <span>{metric}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Case Study Details: Problem & Approach */}
+                {item.problem && (
+                  <div className="space-y-2 border-2 border-black bg-[#F4EBD9] p-3 shadow-ink text-xs">
+                    <div>
+                      <span className="font-mono text-[10px] font-bold uppercase text-[#FF5400] block mb-0.5">
+                        {lang === "en" ? "PROBLEM:" : "PROBLEM:"}
+                      </span>
+                      <p className="text-black/90 font-sans leading-relaxed">
+                        {item.problem[lang] || item.problem.en}
+                      </p>
+                    </div>
+                    <div className="pt-1.5 border-t border-black/20">
+                      <span className="font-mono text-[10px] font-bold uppercase text-black block mb-0.5">
+                        {lang === "en" ? "APPROACH & TRADE-OFF:" : "YAKLAŞIM & TERCİH:"}
+                      </span>
+                      <p className="text-black/90 font-sans leading-relaxed">
+                        {item.approach?.[lang] || item.approach?.en || item.architectureDetails[lang]}
+                      </p>
+                      {item.tradeoffs && (
+                        <p className="text-black/70 font-sans italic mt-1 text-[11px]">
+                          {item.tradeoffs[lang] || item.tradeoffs.en}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Measurable Outcomes */}
+                <div>
+                  <div className="font-mono text-[11px] font-bold uppercase text-black/70 mb-2">
+                    {lang === "en" ? "MEASURABLE OUTCOMES:" : "ÖLÇÜLEBİLİR SONUÇLAR:"}
+                  </div>
+                  <ul className="space-y-1.5 font-mono text-xs">
+                    {(lang === "en" ? item.impactMetricsEn : item.impactMetricsTr).map((metric, i) => (
+                      <li key={i} className="flex items-start gap-2 bg-[#F5EFE6]/60 p-1.5 border border-black/30">
+                        <CheckCircle size={15} weight="fill" className="text-[#FF5400] shrink-0 mt-0.5" />
+                        <span className="leading-tight">{metric}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div className="pt-4 border-t-2 border-black flex flex-wrap gap-2">
+              <div className="pt-4 mt-6 border-t-2 border-black flex flex-wrap gap-1.5">
                 {item.techStack.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 border-2 border-black bg-[#F5EFE6] font-mono text-[11px] font-bold"
+                    className="px-2 py-0.5 border border-black bg-[#F5EFE6] font-mono text-[11px] font-bold"
                   >
                     {t}
                   </span>

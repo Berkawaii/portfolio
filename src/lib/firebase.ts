@@ -46,6 +46,9 @@ export interface CaseStudyItem {
   period: string;
   role: LocalizedString;
   summary: LocalizedString;
+  problem?: LocalizedString;
+  approach?: LocalizedString;
+  tradeoffs?: LocalizedString;
   impactMetricsEn: string[];
   impactMetricsTr: string[];
   techStack: string[];
@@ -126,6 +129,7 @@ export interface SectionConfig {
 }
 
 export interface SiteContent {
+  version?: number;
   theme: SiteTheme;
   resumeUrl?: string;
   sectionsOrder: SectionConfig[];
@@ -188,6 +192,7 @@ export interface SiteContent {
 }
 
 export const DEFAULT_SITE_CONTENT: SiteContent = {
+  version: 3,
   theme: {
     canvasBg: "#F5EFE6",
     accentColor: "#FF5400",
@@ -203,7 +208,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     },
     {
       id: "metrics",
-      name: { en: "Architecture Metrics", tr: "Mimari Metrikler" },
+      name: { en: "Impact Metrics", tr: "Etki Metrikleri" },
       visible: true,
     },
     {
@@ -229,7 +234,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     {
       id: "firebaseDeck",
       name: { en: "Firebase Telemetry Deck", tr: "Firebase Telemetri Konsolu" },
-      visible: true,
+      visible: false,
     },
     {
       id: "credentials",
@@ -239,24 +244,24 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
   ],
   hero: {
     eyebrow: {
-      en: "SENIOR FULL STACK & MOBILE ARCHITECT",
-      tr: "KIDEMLI FULL STACK & MOBIL MİMAR",
+      en: "SENIOR FULL STACK & MOBILE ENGINEER",
+      tr: "KIDEMLİ FULL STACK & MOBİL MÜHENDİS",
     },
     headline: {
-      en: "ARCHITECTING SCALE WITH HARDCORE DISCIPLINE.",
-      tr: "ÖLÇEKLENEBİLİR SİSTEMLERİ DİSİPLİNLE İNŞA EDİYORUM.",
+      en: "BUILDING HIGH-CONCURRENCY MOBILE & BACKEND SYSTEMS.",
+      tr: "YÜKSEK PERFORMANSLI MOBİL VE ARKA YÜZ SİSTEMLERİ GELİŞTİRİYORUM.",
     },
     subtext: {
-      en: "Senior architect delivering distributed cloud backends, high-throughput microservices, and enterprise mobile engines for thirty thousand clients.",
-      tr: "Otuz binden fazla kurumsal müşteri için yüksek performanslı mikroservisler, dağıtık bulut mimarileri ve kurumsal mobil motorlar tasarlayan kıdemli mimar.",
+      en: "Full Stack & Mobile Engineer specializing in .NET Core microservices, cross-platform Flutter engines, and resilient B2B enterprise solutions serving 30,000+ corporate clients.",
+      tr: "30.000'den fazla kurumsal müşteriye hizmet veren .NET Core mikroservisleri, Flutter motorları ve dayanıklı B2B mimarileri geliştiren Full Stack ve Mobil Mühendis.",
     },
     primaryCta: {
-      en: "EXPLORE ARCHITECTURE",
-      tr: "MİMARİYİ İNCELE",
+      en: "EXPLORE WORK",
+      tr: "PROJELERİ İNCELE",
     },
     captionFigure: {
-      en: "FIG 1.0 : CYBER ARCHITECT",
-      tr: "ŞEKİL 1.0 : SİSTEM MİMARI",
+      en: "FIG 1.0 : FULL STACK ENGINEER",
+      tr: "ŞEKİL 1.0 : FULL STACK MÜHENDİS",
     },
     captionLocation: {
       en: "ISTANBUL, TR",
@@ -334,35 +339,35 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       id: "m-5",
       value: "4.5+ Yrs",
       label: {
-        en: "High-Scale Architecture",
-        tr: "Yüksek Ölçekli Mimari",
+        en: "Enterprise Engineering",
+        tr: "Kurumsal Mühendislik",
       },
       detail: {
-        en: "Enterprise mobile, microservices and distributed data",
-        tr: "Kurumsal mobil, mikroservisler ve dağıtık veri yapıları",
+        en: "High-concurrency mobile, .NET microservices and distributed data",
+        tr: "Yüksek eşzamanlı mobil, .NET mikroservisler ve dağıtık veri",
       },
       bgColor: "bg-[#FFFFFF]",
     },
   ],
   caseStudiesSection: {
     heading: {
-      en: "ENTERPRISE ARCHITECTURAL TRACK RECORD",
-      tr: "KURUMSAL MİMARİ BAŞARI GEÇMİŞİ",
+      en: "ENTERPRISE ENGINEERING CASE STUDIES",
+      tr: "KURUMSAL MÜHENDİSLİK VAKA ÇALIŞMALARI",
     },
     subheading: {
-      en: "Real-world systems engineered for Düzey and commercial partners: modernizing legacy monolithic infrastructure into high-throughput cloud engines.",
-      tr: "Düzey ve ticari ortaklar için geliştirilen gerçek sistemler: eski monolitik altyapıların yüksek performanslı bulut motorlarına dönüştürülmesi.",
+      en: "Real-world production systems engineered for Düzey and enterprise partners: problem framing, architectural trade-offs, and measurable outcomes.",
+      tr: "Düzey ve kurumsal ortaklar için geliştirilen üretim sistemleri: problem tanımı, mimari tercihler ve ölçülebilir sonuçlar.",
     },
     items: [
       {
         id: "unicowallet-fintech",
         title: {
-          en: "UniCoWallet Platform & Autonomous AI Assistant",
+          en: "UniCoWallet Platform & Agentic AI Assistant",
           tr: "UniCoWallet Platformu & Otonom Yapay Zeka Asistanı",
         },
         category: {
-          en: "FINTECH CORE",
-          tr: "FİNTEK ÇEKİRDEĞİ",
+          en: "FINTECH & MOBILE",
+          tr: "FİNTEK & MOBİL",
         },
         client: {
           en: "Düzey (500+ Internal Employees)",
@@ -370,24 +375,36 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         },
         period: "2023 - Present",
         role: {
-          en: "Lead Systems & Mobile Architect",
-          tr: "Lider Sistem & Mobil Mimarı",
+          en: "Full Stack & Mobile Engineer",
+          tr: "Full Stack & Mobil Mühendisi",
         },
         summary: {
-          en: "Architected enterprise digital wallet consolidating employee meal, expense, and travel allowances. Embedded custom agentic AI assistant automating multi-tiered expense reviews and approval chains.",
-          tr: "Çalışan yemek, masraf ve seyahat harcırahlarını birleştiren kurumsal dijital cüzdan mimarisini kurdum. Çok kademeli onay süreçlerini otomatikleştiren özel yapay zeka asistanı entegre ettim.",
+          en: "Engineered an enterprise digital wallet consolidating employee meal, expense, and travel allowances into a unified ledger with automated approval workflows.",
+          tr: "Çalışan yemek, masraf ve seyahat harcırahlarını otomatik onay süreçleriyle birleştiren kurumsal dijital cüzdan sistemini geliştirdim.",
+        },
+        problem: {
+          en: "Managing expense and travel allowances for 500+ staff relied entirely on paper receipts and manual approvals, generating review delays and invoice auditing friction.",
+          tr: "500'den fazla personelin harcama ve seyahat izinleri tamamen kağıt evraklar ve manuel onaylarla yürütülüyor, bu da onay gecikmelerine ve denetim yüküne yol açıyordu.",
+        },
+        approach: {
+          en: "Decoupled the architecture into 3 services: Transaction Engine, Immutable Ledger, and an AI Document Processor for OCR receipt extraction.",
+          tr: "Mimarisi 3 ana parçaya ayrıldı: İşlem Motoru, Değişmez Muhasebe Defteri ve OCR fiş ayrıştırması yapan Yapay Zeka Belge İşlemcisi.",
+        },
+        tradeoffs: {
+          en: "Enforced strict idempotency keys across all payment mutations to eliminate double-spend risks during cell network disconnects.",
+          tr: "Hücresel ağ kopmalarında mükerrer harcama riskini önlemek için tüm ödeme mutasyonlarında katı eşgüçlülük (idempotency) anahtarlarını zorunlu tuttum.",
         },
         impactMetricsEn: [
           "75% physical paperwork reduction across internal operations",
           "Sub-100ms financial transaction authorization latency",
-          "Zero-trust RBAC architecture with JWT and biometric authentication",
-          "Consolidated financial logging with real-time audit trails",
+          "Zero ledger divergence with idempotent transactional write guarantees",
+          "Zero-trust RBAC architecture with biometric and JWT authentication",
         ],
         impactMetricsTr: [
           "Kurum içi operasyonlarda fiziksel evrak işinde %75 azalma",
           "100ms altında finansal işlem yetkilendirme gecikmesi",
-          "JWT ve biyometrik kimlik doğrulamalı sıfır güvenli RBAC mimarisi",
-          "Gerçek zamanlı denetim izleriyle birleştirilmiş finansal kayıtlar",
+          "Eşgüçlü yazma garantileri ile sıfır bakiye tutarsızlığı",
+          "Biyometrik ve JWT kimlik doğrulamalı sıfır güvenli RBAC mimarisi",
         ],
         techStack: [
           ".NET Core",
@@ -405,8 +422,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         },
         badgeColor: "orange",
         architectureDetails: {
-          en: "Microservices cluster decoupled into Transaction Engine, Ledger Auditor, and AI Document Processor with strict idempotency keys.",
-          tr: "İşlem Motoru, Defter Denetçisi ve Yapay Zeka Belge İşlemcisine ayrılmış, katı eşgüçlülük anahtarlarına sahip mikroservis kümesi.",
+          en: "Decoupled microservice architecture: Transaction Engine, Ledger Auditor, and AI Document Processor with strict idempotency keys.",
+          tr: "İşlem Motoru, Defter Denetçisi ve Yapay Zeka Belge İşlemcisine ayrılmış, katı eşgüçlülük anahtarlarına sahip mikroservis mimarisi.",
         },
         imagePath: "/assets/comic_unicowallet.jpg",
       },
@@ -426,20 +443,34 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         },
         period: "2022 - Present",
         role: {
-          en: "Senior Full Stack & Mobile Architect",
-          tr: "Kıdemli Full Stack & Mobil Mimarı",
+          en: "Senior Full Stack & Mobile Engineer",
+          tr: "Kıdemli Full Stack & Mobil Mühendisi",
         },
         summary: {
-          en: "Cross-platform mobile apps using Flutter and .NET Core powering daily sales operations for nationwide distributor networks. Integrated resilient offline-first SQLite cache with event-driven background sync.",
-          tr: "Ülke çapındaki distribütör ağlarının günlük satış operasyonlarını yürüten Flutter ve .NET Core tabanlı çapraz platform mobil uygulamalar. Olay güdümlü arkaplan senkronizasyonlu çevrimdışı SQLite önbelleği.",
+          en: "Cross-platform mobile apps using Flutter and .NET Core powering daily field sales operations for nationwide distributor networks.",
+          tr: "Ülke çapındaki distribütör ağlarının günlük saha satış operasyonlarını yürüten Flutter ve .NET Core tabanlı çapraz platform mobil uygulamalar.",
+        },
+        problem: {
+          en: "Field sales agents operating across nationwide retail routes faced frequent connectivity drops in underground warehouses, causing order sync failures and checkout delays.",
+          tr: "Ülke çapındaki perakende rotalarında çalışan saha temsilcileri depolarda sık sık bağlantı kopması yaşıyor, bu da sipariş senkronizasyon hatalarına ve gecikmelere yol açıyordu.",
+        },
+        approach: {
+          en: "Engineered an offline-first Flutter application utilizing local SQLite storage, coupled with an event-driven background sync engine that pushes queued orders to .NET Core backends upon reconnection.",
+          tr: "Yerel SQLite depolaması kullanan çevrimdışı öncelikli Flutter uygulaması ve yeniden bağlantı kurulduğunda kuyruktaki siparişleri .NET Core sunucularına aktaran olay güdümlü senkronizasyon motoru geliştirdim.",
+        },
+        tradeoffs: {
+          en: "Accepted eventual consistency for non-critical telemetry to prioritize immediate local order placement and sub-second checkout speeds for field agents.",
+          tr: "Saha temsilcileri için anında sipariş kaydı ve bir saniyenin altında işlem hızını önceliklendirmek adına kritik olmayan telemetri verilerinde nihai tutarlılık (eventual consistency) modelini benimsedim.",
         },
         impactMetricsEn: [
           "Sub-second mobile checkout and inventory reservation",
+          "Reliable offline-first operation across 30,000+ client touchpoints",
           "40% reduction in deployment overhead via CI/CD pipelines",
           "Automated beta staging via Firebase App Distribution",
         ],
         impactMetricsTr: [
           "Bir saniyenin altında mobil sipariş tamamlama ve stok rezervasyonu",
+          "30.000+ kurumsal temas noktasında güvenilir çevrimdışı çalışma",
           "CI/CD boru hatları ile dağıtım iş yükünde %40 tasarruf",
           "Firebase App Distribution ile otomatik beta test aşamalandırması",
         ],
@@ -449,6 +480,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           "Riverpod",
           ".NET Core",
           "MSSQL",
+          "SQLite",
           "Firebase App Distribution",
         ],
         badgeText: {
@@ -477,22 +509,36 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         },
         period: "2021 - 2023",
         role: {
-          en: "Software Architect & Modernization Lead",
-          tr: "Yazılım Mimarı & Modernizasyon Lideri",
+          en: "Senior Full Stack Engineer",
+          tr: "Kıdemli Full Stack Mühendisi",
         },
         summary: {
-          en: "Spearheaded architectural migration of legacy Java and Angular systems into a unified .NET Core, React, and Next.js engine. Refactored high-throughput data sync connecting SAP ERP and field sales reps.",
-          tr: "Eski Java ve Angular sistemlerinin birleşik .NET Core, React ve Next.js motoruna mimari geçişini yönettim. SAP ERP ile saha temsilcilerini bağlayan yüksek hacimli veri senkronizasyonunu yeniden yapılandırdım.",
+          en: "Modernized legacy monolithic Java and Angular systems into a unified .NET Core, React, and Next.js stack, streamlining high-throughput data sync between SAP ERP and field sales.",
+          tr: "Eski Java ve Angular sistemlerini birleşik .NET Core, React ve Next.js altyapısına modernize ederek SAP ERP ile saha temsilcileri arasındaki veri senkronizasyonunu hızlandırdım.",
+        },
+        problem: {
+          en: "A legacy monolithic Java and Angular stack caused severe database write-locks on the core SAP ERP during morning peak ordering hours, inflating infrastructure hosting bills.",
+          tr: "Eski monolitik Java ve Angular altyapısı, sabah yoğun sipariş saatlerinde ana SAP ERP üzerinde ciddi veritabanı kilitlenmelerine yol açıyor ve sunucu maliyetlerini artırıyordu.",
+        },
+        approach: {
+          en: "Introduced an asynchronous message brokering pipeline that buffered and throttled incoming mobile transactions before communicating with SAP, while modernizing frontend applications to .NET Core and Next.js.",
+          tr: "SAP ile iletişim kurmadan önce gelen mobil işlemleri arabelleğe alan ve dengeleyen asenkron mesajlaşma katmanı kurdum; ön yüzü .NET Core ve Next.js mimarisine modernize ettim.",
+        },
+        tradeoffs: {
+          en: "Replaced synchronous write-waiting with transactional event queues, introducing message replay mechanisms to handle downstream ERP downtime gracefully.",
+          tr: "Senkron doğrudan yazma yerine kuyruk tabanlı modeli benimsedim; ERP kesintilerini yönetmek için mesaj yeniden oynatma mekanizmaları ekledim.",
         },
         impactMetricsEn: [
           "30% reduction in monthly infrastructure and hosting bills",
           "25% drop in field order fulfillment roundtrip latency",
-          "Decoupled SAP write-locks from mobile burst transactions",
+          "Decoupled SAP transactional write-locks from mobile query bursts",
+          "Unified .NET Core and modern React/Next.js maintainable stack",
         ],
         impactMetricsTr: [
           "Aylık altyapı ve sunucu maliyetlerinde %30 azalma",
           "Saha sipariş karşılama gecikmesinde %25 düşüş",
           "SAP yazma kilitlerini mobil ani işlem yüklerinden bağımsızlaştırma",
+          "Sürdürülebilir .NET Core ve modern React/Next.js altyapısı",
         ],
         techStack: [
           ".NET Core",
@@ -639,12 +685,12 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           tr: "Cruwell's Vox Düşük Gecikmeli Ses & İletişim",
         },
         badgeText: {
-          en: "REAL-TIME LAB",
-          tr: "GERÇEK ZAMANLI LAB",
+          en: "EXPERIMENTAL LAB",
+          tr: "DENEYSEL LAB",
         },
         tabLabel: {
-          en: "CRUWELL'S : REAL-TIME LAB",
-          tr: "CRUWELL'S : GERÇEK ZAMANLI LAB",
+          en: "CRUWELL'S : EXPERIMENTAL",
+          tr: "CRUWELL'S : DENEYSEL",
         },
         period: "2024",
         summary: {
@@ -685,12 +731,12 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           tr: "Syntax Factory Roslyn WASM Motoru",
         },
         badgeText: {
-          en: "WASM COMPILER",
-          tr: "WASM DERLEYİCİ",
+          en: "WASM PROTOTYPE",
+          tr: "WASM PROTOTİPİ",
         },
         tabLabel: {
-          en: "SYNTAX : WASM COMPILER",
-          tr: "SYNTAX : WASM DERLEYİCİ",
+          en: "SYNTAX : WASM PROTOTYPE",
+          tr: "SYNTAX : WASM PROTOTİPİ",
         },
         period: "2023 - 2024",
         summary: {
@@ -729,12 +775,12 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           tr: "Gri Arşiv İnteraktif Yaratıcı Lab",
         },
         badgeText: {
-          en: "INTERACTIVE LAB",
-          tr: "İNTERAKTİF LAB",
+          en: "UI EXPERIMENT",
+          tr: "ARAYÜZ DENEYİ",
         },
         tabLabel: {
-          en: "GRI : INTERACTIVE LAB",
-          tr: "GRI : İNTERAKTİF LAB",
+          en: "GRI : UI EXPERIMENT",
+          tr: "GRI : ARAYÜZ DENEYİ",
         },
         period: "2023",
         summary: {
@@ -773,12 +819,12 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "MÜHENDİSLİK İLKELERİ",
     },
     headline: {
-      en: "ZERO BLOAT. ZERO CRASHES. PURE THROUGHPUT.",
-      tr: "SIFIR ŞİŞKİNLİK. SIFIR ÇÖKME. TAM PERFORMANS.",
+      en: "RESILIENT SYSTEMS. CLEAN CODE. MEASURABLE IMPACT.",
+      tr: "DİRENÇLİ SİSTEMLER. TEMİZ KOD. ÖLÇÜLEBİLİR ETKİ.",
     },
     subtext: {
-      en: "Systems architecture is not about chasing ephemeral hype. It is about constructing resilient, deterministic pipelines that withstand real enterprise pressure without flinching.",
-      tr: "Sistem mimarisi geçici popülerlikleri kovalamak değildir. Gerçek kurumsal yük altında aksamadan çalışan dirençli ve kararlı veri hatları kurmaktır.",
+      en: "Software engineering is not about chasing ephemeral hype. It is about constructing resilient, predictable systems that withstand real enterprise pressure without compromising maintainability.",
+      tr: "Yazılım mühendisliği geçici popülerlikleri kovalamak değildir. Gerçek kurumsal yük altında aksamadan çalışan dirençli, öngörülebilir ve bakımı kolay sistemler inşa etmektir.",
     },
     rules: [
       {
@@ -920,7 +966,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     education: [
       {
         id: "e-1",
-        period: "SEP 2021 - AUG 2026",
+        period: "SEP 2021 - PRESENT (EXP. 2026)",
         school: {
           en: "Anadolu University",
           tr: "Anadolu Üniversitesi",
@@ -1100,7 +1146,7 @@ export async function uploadImageFile(file: File): Promise<string> {
   return optimizedDataUrl;
 }
 
-export const SITE_CONTENT_LOCAL_STORAGE_KEY = "berkay_portfolio_site_content_v3";
+export const SITE_CONTENT_LOCAL_STORAGE_KEY = "berkay_portfolio_site_content_v4";
 
 export function sanitizeResumeUrl(url?: string): string {
   if (!url || url === "/berkay_acar_cv.pdf" || url.endsWith("/berkay_acar_cv.pdf") || url.endsWith("_cv.pdf")) {
@@ -1140,6 +1186,20 @@ export function getLocalSiteContent(): SiteContent {
             ...(parsed.caseStudiesSection || {}),
             heading: parsed.caseStudiesSection?.heading || DEFAULT_SITE_CONTENT.caseStudiesSection.heading,
             subheading: parsed.caseStudiesSection?.subheading || DEFAULT_SITE_CONTENT.caseStudiesSection.subheading,
+            items: (parsed.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem, i: number) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items[i];
+              return {
+                ...defaultItem,
+                ...item,
+                role: item.role?.en?.includes("Architect") ? (defaultItem?.role || item.role) : (item.role || defaultItem?.role),
+                problem: item.problem || defaultItem?.problem,
+                approach: item.approach || defaultItem?.approach,
+                tradeoffs: item.tradeoffs || defaultItem?.tradeoffs,
+                impactMetricsEn: item.impactMetricsEn && Array.isArray(item.impactMetricsEn) ? item.impactMetricsEn : (defaultItem?.impactMetricsEn || []),
+                impactMetricsTr: item.impactMetricsTr && Array.isArray(item.impactMetricsTr) ? item.impactMetricsTr : (defaultItem?.impactMetricsTr || []),
+                techStack: item.techStack && Array.isArray(item.techStack) ? item.techStack : (defaultItem?.techStack || []),
+              };
+            }),
           },
           bentoSection: {
             ...DEFAULT_SITE_CONTENT.bentoSection,
@@ -1256,6 +1316,20 @@ export async function fetchSiteContent(): Promise<{
             ...(data.caseStudiesSection || {}),
             heading: data.caseStudiesSection?.heading || DEFAULT_SITE_CONTENT.caseStudiesSection.heading,
             subheading: data.caseStudiesSection?.subheading || DEFAULT_SITE_CONTENT.caseStudiesSection.subheading,
+            items: (data.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem, i: number) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items[i];
+              return {
+                ...defaultItem,
+                ...item,
+                role: item.role?.en?.includes("Architect") ? (defaultItem?.role || item.role) : (item.role || defaultItem?.role),
+                problem: item.problem || defaultItem?.problem,
+                approach: item.approach || defaultItem?.approach,
+                tradeoffs: item.tradeoffs || defaultItem?.tradeoffs,
+                impactMetricsEn: item.impactMetricsEn && Array.isArray(item.impactMetricsEn) ? item.impactMetricsEn : (defaultItem?.impactMetricsEn || []),
+                impactMetricsTr: item.impactMetricsTr && Array.isArray(item.impactMetricsTr) ? item.impactMetricsTr : (defaultItem?.impactMetricsTr || []),
+                techStack: item.techStack && Array.isArray(item.techStack) ? item.techStack : (defaultItem?.techStack || []),
+              };
+            }),
           },
           bentoSection: {
             ...DEFAULT_SITE_CONTENT.bentoSection,

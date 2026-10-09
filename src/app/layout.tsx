@@ -28,17 +28,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    default: "Berkay Acar : Senior Full Stack & Mobile Engineer",
     template: "%s | Berkay Acar",
   },
   description:
-    "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+    "Senior Full Stack & Mobile Engineer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and resilient B2B enterprise solutions.",
   keywords: [
     "Berkay Acar",
     "Berkay Acar Portfolio",
-    "Berkay Acar Developer",
-    "Senior Full Stack Developer",
-    "Senior Mobile Developer",
+    "Berkay Acar Engineer",
+    "Senior Full Stack Engineer",
+    "Senior Mobile Engineer",
     "Flutter Architecture",
     ".NET Core Microservices",
     "Berkawaii",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     firstName: "Berkay",
     lastName: "Acar",
     username: "Berkawaii",
-    title: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    title: "Berkay Acar : Senior Full Stack & Mobile Engineer",
     description:
-      "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+      "Senior Full Stack & Mobile Engineer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and resilient B2B enterprise solutions.",
     url: SITE_URL,
     siteName: "Berkay Acar Portfolio",
     locale: "en_US",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    title: "Berkay Acar : Senior Full Stack & Mobile Engineer",
     description:
-      "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+      "Senior Full Stack & Mobile Engineer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and resilient B2B enterprise solutions.",
     images: ["/assets/comic_hero_mascot.jpg"],
     creator: "@Berkawaii",
   },
@@ -107,7 +107,7 @@ const jsonLd = {
       name: "Berkay Acar",
       givenName: "Berkay",
       familyName: "Acar",
-      jobTitle: "Senior Full Stack & Mobile Developer",
+      jobTitle: "Senior Full Stack & Mobile Engineer",
       url: SITE_URL,
       image: `${SITE_URL}/assets/comic_hero_mascot.jpg`,
       sameAs: [

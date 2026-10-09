@@ -30,7 +30,7 @@ export function MetricRibbon({ metrics }: MetricRibbonProps) {
                     <Icon size={18} weight="bold" />
                   </div>
                   <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 border border-black bg-black text-white">
-                    {lang === "en" ? "VERIFIED" : "ONAYLI"}
+                    {lang === "en" ? "IMPACT" : "ETKİ"}
                   </span>
                 </div>
                 <div>
