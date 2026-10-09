@@ -17,10 +17,116 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
+const SITE_URL = "https://berkayacar.web.app";
+
 export const metadata: Metadata = {
-  title: "Berkay Acar : Senior Full Stack & Mobile Developer",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    template: "%s | Berkay Acar",
+  },
   description:
     "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+  keywords: [
+    "Berkay Acar",
+    "Berkay Acar Portfolio",
+    "Berkay Acar Developer",
+    "Senior Full Stack Developer",
+    "Senior Mobile Developer",
+    "Flutter Architecture",
+    ".NET Core Microservices",
+    "Berkawaii",
+  ],
+  authors: [{ name: "Berkay Acar", url: SITE_URL }],
+  creator: "Berkay Acar",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "profile",
+    firstName: "Berkay",
+    lastName: "Acar",
+    username: "Berkawaii",
+    title: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    description:
+      "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+    url: SITE_URL,
+    siteName: "Berkay Acar Portfolio",
+    locale: "en_US",
+    images: [
+      {
+        url: "/assets/comic_hero_mascot.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Berkay Acar - Senior Full Stack & Mobile Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Berkay Acar : Senior Full Stack & Mobile Developer",
+    description:
+      "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+    images: ["/assets/comic_hero_mascot.jpg"],
+    creator: "@Berkawaii",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Berkay Acar",
+      givenName: "Berkay",
+      familyName: "Acar",
+      jobTitle: "Senior Full Stack & Mobile Developer",
+      url: SITE_URL,
+      image: `${SITE_URL}/assets/comic_hero_mascot.jpg`,
+      sameAs: [
+        "https://github.com/Berkawaii",
+        "https://linkedin.com/in/im-berkay",
+      ],
+      knowsAbout: [
+        ".NET Core",
+        "Flutter",
+        "TypeScript",
+        "Next.js",
+        "Distributed Systems",
+        "Microservices Architecture",
+        "High-Concurrency Engines",
+        "WebSockets",
+      ],
+      description:
+        "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: "Berkay Acar : Portfolio & Systems Architecture",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Berkay Acar Engineering Portfolio",
+      },
+      about: { "@id": `${SITE_URL}/#person` },
+      mainEntity: { "@id": `${SITE_URL}/#person` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -30,6 +136,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jakartaSans.variable} ${spaceMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-[100dvh] bg-[#F5EFE6] text-black font-sans antialiased selection:bg-[#FF5400] selection:text-white"
