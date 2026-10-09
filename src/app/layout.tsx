@@ -18,9 +18,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Berkay Acar : Senior Full Stack & Mobile Architect",
+  title: "Berkay Acar : Senior Full Stack & Mobile Developer",
   description:
-    "Senior Systems & Mobile Architect specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
+    "Senior Systems & Mobile Developer specialized in high-concurrency .NET Core microservices, cross-platform Flutter engines, and agentic AI pipelines.",
 };
 
 export default function RootLayout({
