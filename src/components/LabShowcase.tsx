@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { GithubLogo, Globe, ArrowSquareOut } from "@phosphor-icons/react";
 import { ComicStickerBadge } from "./ComicSkulls";
+import { ComicImageWithSkeleton } from "./ComicImageWithSkeleton";
 import { useLanguage } from "@/context/LanguageContext";
 import { SiteContent } from "@/lib/firebase";
 
@@ -17,6 +17,10 @@ export function LabShowcase({ labSection }: LabShowcaseProps) {
 
   const [activeId, setActiveId] = useState(items[0]?.id || "cruwells-vox");
   const current = items.find((p) => p.id === activeId) || items[0];
+
+  const currentImageSrc = current?.imagePath || "/assets/comic_realtime_engine.jpg";
+  const [loadedImageSrc, setLoadedImageSrc] = useState<string | null>(null);
+  const isImageBuffering = loadedImageSrc !== currentImageSrc;
 
   if (!current) return null;
 
@@ -61,20 +65,75 @@ export function LabShowcase({ labSection }: LabShowcaseProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Visual Panel */}
             <div className="lg:col-span-6 relative">
-              <div className="border-3 border-black bg-[#F5EFE6] shadow-ink overflow-hidden">
-                <div className="relative aspect-[16/9] w-full">
-                  <Image
-                    src={current.imagePath || "/assets/comic_realtime_engine.jpg"}
+              {current.liveUrl || current.githubUrl ? (
+                <a
+                  href={current.liveUrl || current.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={
+                    lang === "en"
+                      ? `Open ${current.title.en} live experiment`
+                      : `${current.title[lang] || current.title.en} canlı deneyini aç`
+                  }
+                  className="group relative block cursor-pointer border-3 border-black bg-[#F5EFE6] shadow-ink overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-ink-lg focus:outline-none focus:ring-4 focus:ring-[#CCFF00]"
+                >
+                  <ComicImageWithSkeleton
+                    src={currentImageSrc}
                     alt={`${current.title[lang] || current.title.en} artwork`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover"
+                    schematicLabel={current.id.toUpperCase()}
+                    badgeLabel={{
+                      en: "LOADING SCHEMATIC...",
+                      tr: "GÖRSEL YÜKLENİYOR...",
+                    }}
+                    priority={activeId === items[0]?.id}
+                    className="group-hover:scale-105 transition-transform duration-300 ease-out"
+                    onLoadingChange={(loading) => {
+                      if (!loading) setLoadedImageSrc(currentImageSrc);
+                    }}
+                  />
+                  {/* Comic Hover Live Indicator */}
+                  <div className="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none transform translate-y-1 group-hover:translate-y-0">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-black bg-[#CCFF00] font-mono text-xs font-black uppercase text-black shadow-ink">
+                      <Globe size={14} weight="bold" />
+                      <span>{lang === "en" ? "OPEN LIVE EXPERIMENT" : "CANLI DENEYİ AÇ"}</span>
+                      <ArrowSquareOut size={13} weight="bold" />
+                    </span>
+                  </div>
+                </a>
+              ) : (
+                <div className="border-3 border-black bg-[#F5EFE6] shadow-ink overflow-hidden">
+                  <ComicImageWithSkeleton
+                    src={currentImageSrc}
+                    alt={`${current.title[lang] || current.title.en} artwork`}
+                    schematicLabel={current.id.toUpperCase()}
+                    badgeLabel={{
+                      en: "LOADING SCHEMATIC...",
+                      tr: "GÖRSEL YÜKLENİYOR...",
+                    }}
+                    priority={activeId === items[0]?.id}
+                    onLoadingChange={(loading) => {
+                      if (!loading) setLoadedImageSrc(currentImageSrc);
+                    }}
                   />
                 </div>
-              </div>
-              <div className="mt-2 p-2 border-2 border-black bg-[#70D6FF] font-mono text-xs font-bold uppercase flex items-center justify-between">
+              )}
+              <div className="mt-2 p-2 border-2 border-black bg-[#70D6FF] font-mono text-xs font-bold uppercase flex items-center justify-between transition-colors">
                 <span>{lang === "en" ? "LAB EXPERIMENT STATUS" : "LAB DENEY DURUMU"}</span>
-                <span>{lang === "en" ? "PRODUCTION READY" : "ÜRETİME HAZIR"}</span>
+                <span className="flex items-center gap-1.5">
+                  {isImageBuffering ? (
+                    <>
+                      <span className="inline-block w-2 h-2 rounded-full bg-[#FF5400] animate-ping" />
+                      <span className="text-black">
+                        {lang === "en" ? "BUFFERING ASSET..." : "GÖRSEL ALINIYOR..."}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="inline-block w-2 h-2 rounded-full bg-[#000000]" />
+                      <span>{lang === "en" ? "PRODUCTION READY" : "ÜRETİME HAZIR"}</span>
+                    </>
+                  )}
+                </span>
               </div>
             </div>
 

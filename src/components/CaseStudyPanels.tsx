@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { CheckCircle } from "@phosphor-icons/react";
 import { ComicStickerBadge } from "./ComicSkulls";
+import { ComicImageWithSkeleton } from "./ComicImageWithSkeleton";
 import { useLanguage } from "@/context/LanguageContext";
 import { SiteContent } from "@/lib/firebase";
 
@@ -45,15 +45,12 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
                   />
                 </div>
                 <div className="border-3 border-black overflow-hidden bg-[#F5EFE6] shadow-ink">
-                  <div className="relative aspect-[16/9] w-full">
-                    <Image
-                      src={featuredItem.imagePath || "/assets/comic_unicowallet.jpg"}
-                      alt={`${featuredItem.title[lang] || featuredItem.title.en} artwork`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 600px"
-                      className="object-cover"
-                    />
-                  </div>
+                  <ComicImageWithSkeleton
+                    src={featuredItem.imagePath || "/assets/comic_unicowallet.jpg"}
+                    alt={`${featuredItem.title[lang] || featuredItem.title.en} artwork`}
+                    schematicLabel={featuredItem.id.toUpperCase()}
+                    priority
+                  />
                 </div>
                 <div className="mt-2 px-3 py-1.5 border-2 border-black bg-[#CCFF00] font-mono text-xs font-bold uppercase flex items-center justify-between">
                   <span>{featuredItem.client[lang] || featuredItem.client.en}</span>
@@ -191,13 +188,12 @@ export function CaseStudyPanels({ caseStudiesSection }: CaseStudyPanelsProps) {
                 </h3>
 
                 {item.imagePath && (
-                  <div className="relative aspect-[16/9] w-full border-2 border-black overflow-hidden bg-[#F5EFE6] shadow-[2px_2px_0px_#000000]">
-                    <Image
+                  <div className="border-2 border-black overflow-hidden bg-[#F5EFE6] shadow-[2px_2px_0px_#000000]">
+                    <ComicImageWithSkeleton
                       src={item.imagePath}
                       alt={`${item.title[lang] || item.title.en} artwork`}
-                      fill
+                      schematicLabel={item.id.toUpperCase()}
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover"
                     />
                   </div>
                 )}
