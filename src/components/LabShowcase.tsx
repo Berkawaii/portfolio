@@ -15,7 +15,7 @@ export function LabShowcase({ labSection }: LabShowcaseProps) {
   const { lang } = useLanguage();
   const { heading, subheading, items } = labSection;
 
-  const [activeId, setActiveId] = useState(items[0]?.id || "cruwells-vox");
+  const [activeId, setActiveId] = useState(items[0]?.id || "overcade");
   const current = items.find((p) => p.id === activeId) || items[0];
 
   const currentImageSrc = current?.imagePath || "/assets/comic_realtime_engine.jpg";

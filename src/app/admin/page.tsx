@@ -215,6 +215,14 @@ export default function AdminPage() {
     try {
       const sanitizedContent: SiteContent = {
         ...content,
+        caseStudiesSection: {
+          ...content.caseStudiesSection,
+          items: (content.caseStudiesSection?.items || []).map((cs) => ({
+            ...cs,
+            impactMetricsEn: (cs.impactMetricsEn || []).map((s) => s.trim()).filter(Boolean),
+            impactMetricsTr: (cs.impactMetricsTr || []).map((s) => s.trim()).filter(Boolean),
+          })),
+        },
         labSection: {
           ...content.labSection,
           items: (content.labSection?.items || []).map((lab) => ({
@@ -396,6 +404,18 @@ export default function AdminPage() {
       summary: {
         en: "Architected high-throughput distributed microservices pipeline.",
         tr: "Yüksek hacimli dağıtık mikroservis veri hattı mimarisi geliştirdim.",
+      },
+      problem: {
+        en: "Describe the core business and technical bottleneck solved by this system.",
+        tr: "Bu sistemin çözdüğü temel iş ve teknik darboğazı açıklayın.",
+      },
+      approach: {
+        en: "Describe the architectural solution and implementation strategy.",
+        tr: "Mimari çözümü ve uygulama stratejisini açıklayın.",
+      },
+      tradeoffs: {
+        en: "Describe key technical trade-offs and design decisions made.",
+        tr: "Yapılan temel teknik tercihleri (trade-off) ve tasarım kararlarını açıklayın.",
       },
       impactMetricsEn: ["40% latency reduction across transaction endpoints"],
       impactMetricsTr: ["İşlem uç noktalarında %40 gecikme azalması"],
@@ -1992,6 +2012,166 @@ export default function AdminPage() {
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        CATEGORY (EN)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.category.en}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, category: { ...it.category, en: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        CATEGORY (TR)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.category.tr}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, category: { ...it.category, tr: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        ROLE (EN)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.role.en}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, role: { ...it.role, en: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        ROLE (TR)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.role.tr}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, role: { ...it.role, tr: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        CLIENT (EN)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.client.en}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, client: { ...it.client, en: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        CLIENT (TR)
+                      </label>
+                      <input
+                        type="text"
+                        value={item.client.tr}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, client: { ...it.client, tr: val } } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        PERIOD
+                      </label>
+                      <input
+                        type="text"
+                        value={item.period}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, period: val } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
+                      />
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block font-mono text-xs font-bold uppercase mb-1">
@@ -2001,15 +2181,16 @@ export default function AdminPage() {
                         rows={3}
                         value={item.summary.en}
                         onChange={(e) => {
-                          const copy = [...content.caseStudiesSection.items];
-                          copy[idx].summary.en = e.target.value;
-                          setContent({
-                            ...content,
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
                             caseStudiesSection: {
-                              ...content.caseStudiesSection,
-                              items: copy,
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, summary: { ...it.summary, en: val } } : it
+                              ),
                             },
-                          });
+                          }));
                         }}
                         className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
                       />
@@ -2022,17 +2203,281 @@ export default function AdminPage() {
                         rows={3}
                         value={item.summary.tr}
                         onChange={(e) => {
-                          const copy = [...content.caseStudiesSection.items];
-                          copy[idx].summary.tr = e.target.value;
-                          setContent({
-                            ...content,
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
                             caseStudiesSection: {
-                              ...content.caseStudiesSection,
-                              items: copy,
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, summary: { ...it.summary, tr: val } } : it
+                              ),
                             },
-                          });
+                          }));
                         }}
                         className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1 text-[#FF5400]">
+                        PROBLEM & CONTEXT (EN)
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={item.problem?.en || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, problem: { en: val, tr: it.problem?.tr || "" } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1 text-[#FF5400]">
+                        PROBLEM & CONTEXT (TR)
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={item.problem?.tr || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, problem: { en: it.problem?.en || "", tr: val } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        ENGINEERING APPROACH (EN)
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={item.approach?.en || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, approach: { en: val, tr: it.approach?.tr || "" } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        ENGINEERING APPROACH (TR)
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={item.approach?.tr || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, approach: { en: it.approach?.en || "", tr: val } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1 text-[#0066cc]">
+                        ARCHITECTURAL TRADE-OFF (EN)
+                      </label>
+                      <textarea
+                        rows={2}
+                        value={item.tradeoffs?.en || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, tradeoffs: { en: val, tr: it.tradeoffs?.tr || "" } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1 text-[#0066cc]">
+                        ARCHITECTURAL TRADE-OFF (TR)
+                      </label>
+                      <textarea
+                        rows={2}
+                        value={item.tradeoffs?.tr || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? { ...it, tradeoffs: { en: it.tradeoffs?.en || "", tr: val } }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white text-xs font-sans leading-relaxed"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        SYSTEM SPEC / ARCHITECTURE DETAILS (EN)
+                      </label>
+                      <textarea
+                        rows={2}
+                        value={item.architectureDetails?.en || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? {
+                                      ...it,
+                                      architectureDetails: {
+                                        en: val,
+                                        tr: it.architectureDetails?.tr || "",
+                                      },
+                                    }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white font-mono text-xs leading-relaxed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        SYSTEM SPEC / ARCHITECTURE DETAILS (TR)
+                      </label>
+                      <textarea
+                        rows={2}
+                        value={item.architectureDetails?.tr || ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx
+                                  ? {
+                                      ...it,
+                                      architectureDetails: {
+                                        en: it.architectureDetails?.en || "",
+                                        tr: val,
+                                      },
+                                    }
+                                  : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white font-mono text-xs leading-relaxed"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        MEASURABLE OUTCOMES (EN - ONE PER LINE)
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={(item.impactMetricsEn || []).join("\n")}
+                        onChange={(e) => {
+                          const lines = e.target.value.split("\n");
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, impactMetricsEn: lines } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white font-mono text-xs leading-relaxed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-xs font-bold uppercase mb-1">
+                        MEASURABLE OUTCOMES (TR - ONE PER LINE)
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={(item.impactMetricsTr || []).join("\n")}
+                        onChange={(e) => {
+                          const lines = e.target.value.split("\n");
+                          setContent((prev) => ({
+                            ...prev,
+                            caseStudiesSection: {
+                              ...prev.caseStudiesSection,
+                              items: prev.caseStudiesSection.items.map((it, i) =>
+                                i === idx ? { ...it, impactMetricsTr: lines } : it
+                              ),
+                            },
+                          }));
+                        }}
+                        className="w-full px-3 py-2 border-2 border-black bg-white font-mono text-xs leading-relaxed"
                       />
                     </div>
                   </div>
@@ -2045,18 +2490,19 @@ export default function AdminPage() {
                       type="text"
                       value={item.techStack.join(", ")}
                       onChange={(e) => {
-                        const copy = [...content.caseStudiesSection.items];
-                        copy[idx].techStack = e.target.value
+                        const stack = e.target.value
                           .split(",")
                           .map((s) => s.trim())
                           .filter(Boolean);
-                        setContent({
-                          ...content,
+                        setContent((prev) => ({
+                          ...prev,
                           caseStudiesSection: {
-                            ...content.caseStudiesSection,
-                            items: copy,
+                            ...prev.caseStudiesSection,
+                            items: prev.caseStudiesSection.items.map((it, i) =>
+                              i === idx ? { ...it, techStack: stack } : it
+                            ),
                           },
-                        });
+                        }));
                       }}
                       className="w-full px-3 py-1.5 border-2 border-black bg-white font-mono text-xs font-bold"
                     />
@@ -2066,18 +2512,18 @@ export default function AdminPage() {
                   <AdminImageUploader
                     label="PROJECT PANEL ARTWORK"
                     imagePath={item.imagePath}
-                    fallbackPath="/assets/comic_unicowallet.jpg"
+                    fallbackPath="/assets/comic_realtime_engine.jpg"
                     aspectRatio="video"
                     onChange={(newPath) => {
-                      const copy = [...content.caseStudiesSection.items];
-                      copy[idx].imagePath = newPath;
-                      setContent({
-                        ...content,
+                      setContent((prev) => ({
+                        ...prev,
                         caseStudiesSection: {
-                          ...content.caseStudiesSection,
-                          items: copy,
+                          ...prev.caseStudiesSection,
+                          items: prev.caseStudiesSection.items.map((it, i) =>
+                            i === idx ? { ...it, imagePath: newPath } : it
+                          ),
                         },
-                      });
+                      }));
                     }}
                   />
                 </div>

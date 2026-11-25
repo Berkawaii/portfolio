@@ -26,7 +26,7 @@ export function FirebaseControlDeck({
   }, []);
 
   const [selectedProjectId, setSelectedProjectId] = useState<string>(
-    projects[0]?.id || "unicowallet-fintech"
+    projects[0]?.id || "sun-engine-core"
   );
 
   const selectedProject =
@@ -70,7 +70,7 @@ export function FirebaseControlDeck({
                   {diagnostics.projectId}
                 </div>
                 <div className="font-mono text-xs text-black/80 mt-1">
-                  Primary Data Region : us-central1 (Firestore)
+                  Primary Data Region : eur3 (Firestore)
                 </div>
               </div>
 

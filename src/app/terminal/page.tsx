@@ -29,105 +29,153 @@ type VirtualNode = VirtualFile | VirtualDir;
 const VIRTUAL_FS: Record<string, VirtualNode> = {
   projects: {
     type: "dir",
-    date: "Oct 07 15:30",
+    date: "Nov 23 15:00",
     children: {
-      unicowallet: {
+      "sun-engine": {
         type: "dir",
-        date: "Oct 07 14:00",
+        date: "Nov 23 15:00",
         children: {
           "README.md": {
             type: "file",
-            size: "1.8K",
-            date: "Oct 07 14:00",
+            size: "1.9K",
+            date: "Nov 23 15:00",
             content: `================================================================================
-UNICOWALLET - HIGH-CONCURRENCY FINANCIAL TRANSACTION ORCHESTRATION PLATFORM
+SUN-ENGINE - CORE SFA, PRICING & ENTERPRISE BACKEND (.NET 9)
 ================================================================================
-Domain       : Autonomous Fintech Infrastructure & Micro-Transactions
-Active Scale : 30,000+ Enterprise Clients | Sub-50ms Transaction Latency
-Availability : 99.99% Production SLA across high-traffic operating windows
-Lead Tech    : .NET 8 Microservices, C#, PostgreSQL, Redis, Flutter, Docker
+Domain       : Enterprise ERP Sync, Expense Management & Discount Approval Core
+Host Engine  : nopCommerce 4.80.6 on .NET 9.0 (Modular Plugin Architecture)
+Client       : Düzey Pazarlama A.Ş. (Koç Holding)
 
 DESCRIPTION:
-An automated, multi-account financial transaction orchestration engine designed
-to eliminate human latency in high-frequency payment verification workflows.
-Features asynchronous queue processing, AES-256 encrypted payload envelopes,
-and distributed idempotency validation.`,
+Unified .NET 9 plugin ecosystem hosting ExpenseManagement (migrated from Java
+Spring Boot/JHipster with 13 DTOs, 8 mappers, and 13 tiered services),
+DiscountRequest (deferred discount matrix, brand-specific price masking, AI assistant),
+and SalesEngine (multi-criteria SFA pricing schemas + Panorama SOAP sync).`,
           },
           "architecture.md": {
             type: "file",
-            size: "2.4K",
-            date: "Oct 07 14:05",
-            content: `UNICOWALLET ARCHITECTURE SPECIFICATION:
+            size: "1.7K",
+            date: "Nov 23 15:00",
+            content: `SUN-ENGINE MODULAR PLUGIN ARCHITECTURE:
 --------------------------------------------------------------------------------
-1. Ingress Tier:
-   - High-throughput API gateway built on ASP.NET Core Kestrel engine.
-   - Token bucket rate limiting with Redis-backed distributed state.
+1. Nop.Plugin.ExpenseManagement:
+   - Migrated from JHipster/Java into .NET 9 C# immutable record DTOs.
+   - 3-tier service layer with manual mappers preventing circular references.
 
-2. Event & Message Dispatch:
-   - Decoupled asynchronous consumer queues with distributed idempotency keys.
-   - Resilient circuit breakers with Polly policies preventing cascading panics.
+2. Nop.Plugin.Discount.DiscountRequest & Misc.SalesEngine:
+   - Customer/channel/brand/segment/city/scale pricing & condition schemas.
+   - Deferred matrix loading & brand-specific price masking for restricted roles.
 
-3. Persistence & Caching:
-   - PostgreSQL master-replica topology with connection pooling via PgBouncer.
-   - Redis in-memory ring buffers caching active sessions and balance snapshots.
-
-4. Client Frontend:
-   - Cross-platform Flutter engine running on iOS, Android, and Desktop targets.
-   - Offline-first cache layer with sub-100ms delta reconciliation.`,
-          },
-          "specs.json": {
-            type: "file",
-            size: "612B",
-            date: "Oct 07 14:10",
-            content: `{
-  "system": "Unicowallet Engine",
-  "version": "4.2.0-prod",
-  "clientCount": 30000,
-  "p99LatencyMs": 48.2,
-  "uptimePercent": 99.99,
-  "stack": [".NET 8", "C#", "PostgreSQL", "Redis", "Flutter", "Docker"],
-  "security": ["AES-256", "HMAC-SHA256", "Zero-Trust RBAC"]
-}`,
+3. Sync & Identity Plugins:
+   - PanoramaIntegration (SOAP), PriceSync, DiscountSync, CustomerSync.
+   - JWT Bearer + Microsoft Entra ID + OtpAuthenticator.`,
           },
         },
       },
-      aegis: {
+      "duzey-masraf": {
         type: "dir",
-        date: "Oct 07 14:00",
+        date: "Nov 23 15:00",
         children: {
           "README.md": {
             type: "file",
             size: "1.6K",
-            date: "Oct 07 14:00",
+            date: "Nov 23 15:00",
             content: `================================================================================
-AEGIS - AUTONOMOUS PUZZLE & MATHEMATICAL CONSTRAINT ENGINE
+DÜZEY MASRAF - ENTERPRISE DIGITAL EXPENSE & APPROVAL PWA
 ================================================================================
-Domain       : Algorithmic Game Systems & Heuristic Evaluation
-Throughput   : Millions of state transitions evaluated per generation cycle
-Engine       : Unity, C#, Custom Constraint Satisfaction Solver (CSP)
+Stack        : React 19, TypeScript, Vite 8, PWA, MSAL Entra ID, Cloud Firestore
+Backend      : Sun-Engine (.NET 9 / Nop.Plugin.ExpenseManagement)
 
 DESCRIPTION:
-A deterministic procedural puzzle generation and constraint verification system.
-Constructed using forward checking, minimum remaining values (MRV) heuristics,
-and state-space graph traversal to guarantee mathematical solvability.`,
+Installable enterprise PWA digitizing receipt uploads (browser imageCompressor),
+7-role approval workflows (Employee -> Manager -> Admin/Finance -> Accounting SAP FI),
+full-filtered UTF-8 CSV exports, PDF dispatch, Firestore live SSO/maintenance
+controls, and the embedded Gemini-assisted Muhittin smart assistant.`,
           },
-          "algorithms.md": {
+        },
+      },
+      "iskonto-talep": {
+        type: "dir",
+        date: "Nov 23 15:00",
+        children: {
+          "README.md": {
             type: "file",
-            size: "1.9K",
-            date: "Oct 07 14:15",
-            content: `AEGIS MATHEMATICAL & ALGORITHMIC SPECIFICATION:
---------------------------------------------------------------------------------
-1. Constraint Satisfaction Engine (CSP):
-   - Backtracking search combined with AC-3 arc consistency algorithms.
-   - Dynamic variable ordering based on degree heuristic and MRV.
+            size: "1.5K",
+            date: "Nov 23 15:00",
+            content: `================================================================================
+İSKONTO TALEP - COMMERCIAL DISCOUNT & SPECIAL PRICE PORTAL
+================================================================================
+Stack        : Next.js 16, React 19, TypeScript, Tailwind CSS 4, Axios, JWT
+Backend      : Sun-Engine (.NET 9 / Nop.Plugin.Discount.DiscountRequest)
 
-2. Solvability Verification:
-   - Deterministic forward graph traversal proving puzzle completion paths.
-   - Elimination of dead-end configurations prior to client asset compilation.
+DESCRIPTION:
+Dual-theme B2B approval workspace featuring a 4-step request creation wizard,
+quick approval flow, role-based KC Excel templates, deferred discount matrix
+loading, hidden-price masking, grouped audit timelines, and AI assistant nudges.`,
+          },
+        },
+      },
+      "duzey-market-b2b": {
+        type: "dir",
+        date: "Nov 23 15:00",
+        children: {
+          "README.md": {
+            type: "file",
+            size: "1.7K",
+            date: "Nov 23 15:00",
+            content: `================================================================================
+DÜZEY MARKET B2B - ENTERPRISE E-COMMERCE PLATFORM (.NET 7)
+================================================================================
+Scale        : 30,000+ Corporate Clients | 30+ Custom nopCommerce 4.60 Plugins
+Payment Gate : Iyzico (+ AccountSettler), Netahsilat, TokenFlex, DuzeyGateway
 
-3. Execution Target:
-   - Optimized C# memory layout with zero garbage collection allocations.
-   - SIMD-friendly struct arrays achieving 60fps tick stability on mobile.`,
+DESCRIPTION:
+High-concurrency B2B commerce core featuring SAP stock error management &
+reserved stock thresholds, virtual/parent SKU price caching, decoupled cart vs.
+order-item price traces, checkout validation, workflow rules, and Panorama sync.`,
+          },
+        },
+      },
+      "duzey-market-mobile": {
+        type: "dir",
+        date: "Nov 23 15:00",
+        children: {
+          "README.md": {
+            type: "file",
+            size: "1.4K",
+            date: "Nov 23 15:00",
+            content: `================================================================================
+DÜZEY MARKET MOBILE - HYBRID FLUTTER B2B & FIELD APP
+================================================================================
+Stack        : Flutter, Dart, GetX, WebView Bridge, mobile_scanner (Android/iOS)
+
+DESCRIPTION:
+Cross-platform mobile app uniting customer storefront (duzeymarket.com) and
+internal staff portal (personel.duzeymarket.com) with native Smart Ready Baskets,
+Iyzico flows, and a draggable floating camera barcode scanner for shelf ordering.`,
+          },
+        },
+      },
+      overcade: {
+        type: "dir",
+        date: "Nov 23 15:00",
+        children: {
+          "README.md": {
+            type: "file",
+            size: "1.8K",
+            date: "Nov 23 15:00",
+            content: `================================================================================
+OVERCADE - ZERO-INSTALL WEBRTC BROWSER CONSOLE & WIRELESS GAMEPAD OS
+================================================================================
+Live URL     : https://overcade.web.app
+Repo         : https://github.com/Berkawaii/Overcade
+Stack        : React 19, TypeScript, WebRTC P2P, Three.js / R3F, RPG-JS v5, Firestore
+
+DESCRIPTION:
+Turns any PC or Smart TV browser into a 1-4 player console and smartphones into
+QR-paired wireless controllers. Ephemeral Firestore SDP/ICE signaling hands off
+to an unordered, zero-retransmit WebRTC UDP DataChannel streaming 8-byte binary
+ArrayBuffer gamepad packets and 8-byte host feedback telemetry at 60 FPS.`,
           },
         },
       },
@@ -137,73 +185,48 @@ and state-space graph traversal to guarantee mathematical solvability.`,
         children: {
           "README.md": {
             type: "file",
-            size: "1.7K",
+            size: "1.5K",
             date: "Oct 07 14:00",
             content: `================================================================================
-CRUWELL'S VOX - DISTRIBUTED LOW-LATENCY SPATIAL AUDIO MESH
+CRUWELL'S VOX - LOW-LATENCY REAL-TIME AUDIO & COMMS
 ================================================================================
-Domain       : Real-Time Networked Audio & Spatial Telemetry
-Latency      : Sub-20ms packet dispatch across distributed node mesh
-Protocol     : WebRTC, C#, WebSockets, Binary Audio Frame Packing
-
-DESCRIPTION:
-An experimental distributed voice mesh providing positional 3D audio telemetry
-over high-jitter network conditions. Implements custom ring-buffer jitter
-smoothing and zero-copy binary audio serialization.`,
-          },
-          "protocol.md": {
-            type: "file",
-            size: "2.1K",
-            date: "Oct 07 14:20",
-            content: `CRUWELL'S VOX NETWORK PROTOCOL SPEC:
---------------------------------------------------------------------------------
-1. Binary Serialization:
-   - Custom 16-byte packed telemetry headers with microsecond timestamps.
-   - OPUS audio frames serialized with variable bitrate adaptive compression.
-
-2. Spatial Positioning:
-   - 3D Cartesian coordinates (X, Y, Z) and head orientation quaternions.
-   - Dynamic HRTF (Head-Related Transfer Function) calculation in client WebAudio.
-
-3. Fault Recovery:
-   - Predictive packet loss concealment (PLC) minimizing audio clipping.
-   - Automatic mesh topology failover upon node packet drop exceeding 5%.`,
+Live URL     : https://cruwellsvox.web.app/
+Repo         : https://github.com/Berkawaii/Cruwell-s-Vox
+Stack        : React, Electron, Firebase, LiveKit SFU, Oracle, Firestore`,
           },
         },
       },
-      "tactical-football": {
+      aegis: {
         type: "dir",
         date: "Oct 07 14:00",
         children: {
           "README.md": {
             type: "file",
-            size: "1.6K",
+            size: "1.5K",
             date: "Oct 07 14:00",
             content: `================================================================================
-TACTICAL FOOTBALL SIM - DETERMINISTIC SPORTS SIMULATION ENGINE
+AEGIS - AUTONOMOUS LLM PUZZLE & ESCAPE ROOM ENGINE
 ================================================================================
-Domain       : Simulation Architecture & Sports Spatial Analytics
-Tick Rate    : 60Hz deterministic physics lockstep across 22 concurrent agents
-Stack        : C#, Spatial Hash Partitioning, Event-Driven Architecture
-
-DESCRIPTION:
-A deterministic 2D/3D soccer simulation engine featuring 22 autonomous agents
-making continuous tactical decisions using spatial influence maps and
-raycast passing lanes.`,
+Live URL     : https://aiescaperoom.onrender.com/
+Repo         : https://github.com/Berkawaii/AiEscapeRoom
+Stack        : TypeScript, React, OpenAI API, Node.js, Zustand, Tailwind CSS`,
           },
-          "physics_engine.md": {
+        },
+      },
+      "halisaha-manager": {
+        type: "dir",
+        date: "Oct 07 14:00",
+        children: {
+          "README.md": {
             type: "file",
-            size: "1.8K",
-            date: "Oct 07 14:25",
-            content: `TACTICAL FOOTBALL SIM ENGINE DETAILS:
---------------------------------------------------------------------------------
-1. Spatial Partitioning:
-   - Uniform grid hash spatial index reducing collision complexity from O(n^2) to O(1).
-   - Dynamic player proximity query caches updated every physics frame.
-
-2. Deterministic Lockstep:
-   - Fixed-point integer arithmetic ensuring bit-identical replay simulation.
-   - State snapshot serialization enabling instant scrubbing and rewind analysis.`,
+            size: "1.5K",
+            date: "Oct 07 14:00",
+            content: `================================================================================
+HALISAHA MANAGER - TACTICAL FOOTBALL SIMULATION ENGINE
+================================================================================
+Live URL     : https://halisaha-manager.web.app/
+Repo         : https://github.com/Berkawaii/halisahaManager
+Stack        : React 18, Firebase, PostgreSQL, Supabase, Tailwind CSS, Vite 6`,
           },
         },
       },
@@ -213,18 +236,14 @@ raycast passing lanes.`,
         children: {
           "README.md": {
             type: "file",
-            size: "1.5K",
+            size: "1.4K",
             date: "Oct 07 14:00",
             content: `================================================================================
-CHASTITY VIRTUAL MUSEUM - INTERACTIVE SPATIAL WEBGL GALLERY
+CHASTITY VIRTUAL MUSEUM - EUROPEANA ART EXHIBITION
 ================================================================================
-Domain       : GPU Web Graphics & Spatial Interactive Interface
-Render Rate  : Solid 60fps WebGL pipeline across desktop & mobile viewports
-Stack        : Three.js, WebGL Shaders, Next.js, Dynamic Asset Streaming
-
-DESCRIPTION:
-An interactive spatial museum platform delivering curated virtual exhibits with
-dynamic texture LOD streaming, ambient occlusion shaders, and spatial navigation.`,
+Live URL     : https://berkawaii.github.io/chastityWeb/
+Repo         : https://github.com/Berkawaii/chastity
+Stack        : React, Axios, Framer Motion, Europeana API, Vite`,
           },
         },
       },
@@ -233,7 +252,7 @@ dynamic texture LOD streaming, ambient occlusion shaders, and spatial navigation
   "README.md": {
     type: "file",
     size: "2.1K",
-    date: "Oct 07 15:30",
+    date: "Nov 23 15:00",
     content: `================================================================================
 BERKAY ACAR - ENGINEERING PORTFOLIO & DIAGNOSTICS CONSOLE
 ================================================================================
@@ -241,11 +260,11 @@ Welcome to the interactive engineering terminal for Berkay Acar, Senior Full-Sta
 and Mobile Engineer.
 
 QUICK START:
-  - Type "projects" to view the complete production systems breakdown.
+  - Type "projects" to view all 5 enterprise systems and 5 R&D labs.
   - Type "cd projects" and "ls" to explore project folders in the virtual filesystem.
-  - Type "cat projects/unicowallet/architecture.md" to inspect deep technical specs.
+  - Type "cat projects/sun-engine/architecture.md" to inspect backend specs.
   - Type "resume" to download the official PDF curriculum vitae.
-  - Type "skills" for the complete backend, mobile, and cloud technical arsenal.
+  - Type "skills" for the complete .NET, React/Next.js, Flutter, and cloud arsenal.
   - Type "coffee" or "skate" for interactive ASCII animations.`,
   },
   "Berkay_Acar_Resume.pdf": {
@@ -258,13 +277,13 @@ Type "resume" to download and open the official PDF resume in your browser.`,
   "skills.txt": {
     type: "file",
     size: "1.4K",
-    date: "Oct 07 14:00",
+    date: "Nov 23 15:00",
     content: `[TECHNICAL ARSENAL SUMMARY]
-CORE BACKEND  : .NET Core 8/9, C#, ASP.NET Microservices, Entity Framework Core, Dapper
-MOBILE ENGINE : Flutter, Dart, Android Native, iOS Swift, State Management (Bloc, Riverpod)
-DATA & PUBSUB : PostgreSQL, Redis Ring Buffers, Google Cloud Firestore, Kafka
-INFRA & CLOUD : Docker, Kubernetes, CI/CD GitHub Actions, Firebase Hosting, Cloud Run
-DISTRIBUTED   : WebSockets Pipelines, WebRTC, Mono WASM Compilation, Zero-Trust IAM`,
+CORE BACKEND  : .NET 9 / .NET 7, C#, nopCommerce 4.60/4.80 Plugins, REST APIs, SAP/Panorama ERP
+WEB FRONTEND  : React 19, Next.js 16, TypeScript, Vite 8, Tailwind CSS 4, PWA / Service Workers
+MOBILE ENGINE : Flutter, Dart, GetX, WebView Bridge, Native Barcode Scanner (Android & iOS)
+DATA & CLOUD  : MSSQL, PostgreSQL, Redis, Cloud Firestore, SQLite, Microsoft Entra ID (MSAL)
+R&D / REALTIME: WebRTC P2P DataChannels, 8-Byte Binary Protocols, Three.js R3F, Gemini/OpenAI APIs`,
   },
   "contact.json": {
     type: "file",
@@ -488,46 +507,48 @@ DISTRIBUTED   : WebSockets High-Throughput Pipelines, WebAudio API, Mono WASM, W
         newHistory.push({
           type: "output",
           text: `================================================================================
-                    PRODUCTION SYSTEMS & R&D LABS REGISTRY                      
+                    ENTERPRISE SYSTEMS & R&D LABS REGISTRY
 ================================================================================
 
-[1] UNICOWALLET - AUTONOMOUS MULTI-ACCOUNT INFRASTRUCTURE
-    Category     : High-Concurrency Financial Tech & Distributed Systems
-    Scale        : 30,000+ Active Clients | Sub-50ms Latency | 99.99% SLA
-    Architecture : .NET 8 Microservices, PostgreSQL, Redis ring buffers, AES-256
-    Capabilities : Concurrent transaction orchestration, idempotency keys, circuit breakers
-    Virtual Path : ~/projects/unicowallet/
+[1] SUN-ENGINE - CORE SFA, PRICING & ENTERPRISE BACKEND
+    Domain       : .NET 9 / nopCommerce 4.80.6 Modular Plugin Host
+    Highlights   : ExpenseManagement (Java/JHipster migration), DiscountRequest,
+                   SalesEngine multi-criteria pricing, Panorama SOAP & ERP sync
+    Virtual Path : ~/projects/sun-engine/
 
-[2] AEGIS - AUTONOMOUS PUZZLE & CONSTRAINT ENGINE
-    Category     : Algorithmic Game Systems & Heuristic Evaluation
-    Scale        : Millions of state transitions evaluated per cycle
-    Architecture : Unity, C#, Constraint Satisfaction (CSP), State-Space Graph Traversal
-    Capabilities : Deterministic level generation, board validation, mathematical proofs
-    Virtual Path : ~/projects/aegis/
+[2] DÜZEY MASRAF - DIGITAL EXPENSE & APPROVAL PWA
+    Domain       : React 19, TypeScript, Vite 8, PWA, MSAL Entra ID, Firestore
+    Highlights   : 7-role RBAC approval flow, receipt compression, UTF-8 CSV/PDF,
+                   live SSO/maintenance toggles, Gemini-powered Muhittin assistant
+    Virtual Path : ~/projects/duzey-masraf/
 
-[3] CRUWELL'S VOX - SPATIAL AUDIO TELEMETRY MESH
-    Category     : Low-Latency Networked Communications
-    Scale        : Sub-20ms audio packet dispatch | Zero packet reordering loss
-    Architecture : WebRTC, C#, WebSockets, Binary Audio Serialization
-    Capabilities : Spatial positioning audio packets, jitter buffer mitigation, mesh routing
-    Virtual Path : ~/projects/cruwells-vox/
+[3] İSKONTO TALEP - COMMERCIAL DISCOUNT & PRICING PORTAL
+    Domain       : Next.js 16, React 19, TypeScript, Tailwind CSS 4, JWT Auth
+    Highlights   : 4-step dynamic request wizard, KC Excel reporting, deferred
+                   discount matrix, hidden price masking, AI approval nudges
+    Virtual Path : ~/projects/iskonto-talep/
 
-[4] TACTICAL FOOTBALL SIM - DETERMINISTIC SPORTS PHYSICS
-    Category     : Simulation Engine & Sports Analytics
-    Scale        : 60Hz deterministic physics tick rate across 22 concurrent agents
-    Architecture : Spatial Partitioning, Event-Driven State Synchronization
-    Capabilities : Multi-agent spatial tactical decision engines, deterministic simulation cycles
-    Virtual Path : ~/projects/tactical-football/
+[4] DÜZEY MARKET B2B - ENTERPRISE E-COMMERCE ENGINE
+    Domain       : .NET 7 / nopCommerce 4.60 | 30,000+ Corporate Clients
+    Highlights   : 30+ custom plugins, SAP stock reservation, parent-SKU caching,
+                   Iyzico / Netahsilat / TokenFlex / DuzeyGateway payments
+    Virtual Path : ~/projects/duzey-market-b2b/
 
-[5] CHASTITY VIRTUAL MUSEUM - INTERACTIVE SPATIAL GALLERY
-    Category     : WebGL Graphics & Spatial Web Interface
-    Scale        : 60fps WebGL rendering across desktop and mobile viewports
-    Architecture : Three.js, WebGL Shaders, Next.js, Dynamic Asset Streaming
-    Capabilities : GPU-accelerated 3D environment rendering, progressive texture LOD streaming
-    Virtual Path : ~/projects/chastity-museum/
+[5] DÜZEY MARKET MOBILE - HYBRID FLUTTER B2B & FIELD APP
+    Domain       : Flutter, Dart, GetX, WebView Bridge, mobile_scanner
+    Highlights   : Storefront & staff portal modes, Smart Ready Baskets,
+                   draggable floating camera barcode scanner for live search
+    Virtual Path : ~/projects/duzey-market-mobile/
+
+--- R&D & EXPERIMENTAL LABS ---
+[6] OVERCADE          - Zero-Install WebRTC Browser Console (overcade.web.app)
+[7] CRUWELL'S VOX     - Low-Latency Audio & Comms (cruwellsvox.web.app)
+[8] AEGIS             - Autonomous LLM Escape Room (aiescaperoom.onrender.com)
+[9] HALISAHA MANAGER  - Tactical Football Simulation (halisaha-manager.web.app)
+[10] CHASTITY MUSEUM  - Europeana Virtual Exhibition (berkawaii.github.io/chastityWeb)
 
 --------------------------------------------------------------------------------
-PRO-TIP: Use "cd projects/<name>" and "cat architecture.md" to inspect deep-dive technical specs!`,
+PRO-TIP: Use "cd projects/<name>" and "cat README.md" to inspect specs!`,
         });
         break;
 

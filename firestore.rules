@@ -1,18 +1,130 @@
 rules_version = '2';
+
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Firebase Project: berkay-58575
+// Database: (default) [STANDARD / FIRESTORE_NATIVE, eur3]
+//
+// Collection: settings
+// Document ID: site_content (singleton CMS configuration document)
+// Access:
+//   - Public single-document get (portfolio landing page read)
+//   - Collection list denied
+//   - Create/Update restricted to authenticated portfolio admin UID
+//   - Delete denied to prevent accidental removal of live CMS content
+// Fields:
+//   - version: number (optional) - schema version marker
+//   - resumeUrl: string (optional, <= 1,000,000 chars) - resume path or URL
+//   - theme: map (required) - color tokens (canvasBg, accentColor, cardBg, borderColor)
+//   - sectionsOrder: list (required, <= 50 items) - ordered section visibility configs
+//   - hero: map (required) - localized hero copy, badges, links, and optional imagePath
+//   - metrics: list (required, <= 100 items) - impact metric cards
+//   - caseStudiesSection: map (required) - heading, subheading, and case study items
+//   - bentoSection: map (required) - heading, subheading, and bento cells
+//   - labSection: map (required) - heading, subheading, and R&D lab items
+//   - manifestoSection: map (required) - eyebrow, headline, subtext, and manifesto rules
+//   - credentialsSection: map (required) - certs, awards, and education lists
+//   - footerSection: map (required) - localized footer CTA and public contact links
+//
+// All other collections/documents are denied by default.
+// ===============================================================
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Public portfolio read access
-    match /projects/{projectId} {
-      allow read: if true;
-      allow write: if true;
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Check if the request comes from an authenticated Firebase Auth user
+    function isAuthenticated() {
+      return request.auth != null;
     }
-    match /experience/{expId} {
-      allow read: if true;
-      allow write: if true;
+
+    // Check if the authenticated user matches a specific user ID
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
     }
-    match /settings/{settingId} {
-      allow read: if true;
-      allow write: if true;
+
+    // Check if the authenticated user is the registered portfolio admin.
+    // NOTE: Do NOT require email_verified == true here; the admin account
+    // (UID tm2tKv2Sn2hgXRUqIpqo4CY67h52) currently has emailVerified: false
+    // in Firebase Auth, so checking email_verified would break /admin saves.
+    function isAdmin() {
+      return isOwner('tm2tKv2Sn2hgXRUqIpqo4CY67h52');
+    }
+
+    // Validate required top-level fields exist on the resulting document
+    function hasRequiredFields(data, fields) {
+      return data.keys().hasAll(fields);
+    }
+
+    // Validate optional number field
+    function isValidOptionalNumber(data, field) {
+      return !(field in data) || data[field] is number;
+    }
+
+    // Validate optional string field within size bounds
+    function isValidOptionalString(data, field, minLen, maxLen) {
+      return !(field in data) ||
+             (data[field] is string &&
+              data[field].size() >= minLen &&
+              data[field].size() <= maxLen);
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    // Lightweight structural validation for /settings/site_content.
+    // Enforces required top-level containers and types across both create
+    // and update without breaking optional CMS fields, dynamic arrays, or
+    // compressed base64 image payloads.
+    function isValidSiteContent(data) {
+      return hasRequiredFields(data, [
+               'hero',
+               'theme',
+               'metrics',
+               'sectionsOrder',
+               'caseStudiesSection',
+               'bentoSection',
+               'labSection',
+               'manifestoSection',
+               'credentialsSection',
+               'footerSection'
+             ]) &&
+             isValidOptionalNumber(data, 'version') &&
+             isValidOptionalString(data, 'resumeUrl', 0, 1000000) &&
+             data.hero is map &&
+             data.theme is map &&
+             data.metrics is list &&
+             data.metrics.size() <= 100 &&
+             data.sectionsOrder is list &&
+             data.sectionsOrder.size() <= 50 &&
+             data.caseStudiesSection is map &&
+             data.bentoSection is map &&
+             data.labSection is map &&
+             data.manifestoSection is map &&
+             data.credentialsSection is map &&
+             data.footerSection is map;
+    }
+
+    // ===============================================================
+    // Collection / Document Rules
+    // ===============================================================
+
+    // Live portfolio CMS configuration document
+    match /settings/site_content {
+      allow get: if true;
+      allow create, update: if isAdmin() && isValidSiteContent(request.resource.data);
+      allow delete: if false;
+    }
+
+    // Default deny all unmatched paths
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

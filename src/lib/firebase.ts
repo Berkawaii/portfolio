@@ -192,7 +192,7 @@ export interface SiteContent {
 }
 
 export const DEFAULT_SITE_CONTENT: SiteContent = {
-  version: 3,
+  version: 5,
   theme: {
     canvasBg: "#F5EFE6",
     accentColor: "#FF5400",
@@ -244,40 +244,40 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
   ],
   hero: {
     eyebrow: {
-      en: "SENIOR FULL STACK & MOBILE ENGINEER",
-      tr: "KIDEMLİ FULL STACK & MOBİL MÜHENDİS",
+      en: "FULL STACK & MOBILE ENGINEER | ENTERPRISE SOLUTIONS",
+      tr: "FULL STACK & MOBİL MÜHENDİS | KURUMSAL ÇÖZÜMLER",
     },
     headline: {
-      en: "BUILDING HIGH-CONCURRENCY MOBILE & BACKEND SYSTEMS.",
-      tr: "YÜKSEK PERFORMANSLI MOBİL VE ARKA YÜZ SİSTEMLERİ GELİŞTİRİYORUM.",
+      en: "BUILDING HIGH-SCALE .NET, WEB & MOBILE SYSTEMS.",
+      tr: "YÜKSEK ÖLÇEKLİ .NET, WEB VE MOBİL SİSTEMLER GELİŞTİRİYORUM.",
     },
     subtext: {
-      en: "Full Stack & Mobile Engineer specializing in .NET Core microservices, cross-platform Flutter engines, and resilient B2B enterprise solutions serving 30,000+ corporate clients.",
-      tr: "30.000'den fazla kurumsal müşteriye hizmet veren .NET Core mikroservisleri, Flutter motorları ve dayanıklı B2B mimarileri geliştiren Full Stack ve Mobil Mühendis.",
+      en: "Full Stack & Mobile Engineer building modular .NET 9 backends, React/Next.js internal portals, Flutter B2B apps, and ERP-integrated platforms serving 30,000+ corporate clients.",
+      tr: "30.000'den fazla kurumsal müşteriye hizmet veren modüler .NET 9 backend motorları, React/Next.js kurumsal portalları, Flutter B2B uygulamaları ve ERP entegre sistemler geliştiren Full Stack ve Mobil Mühendis.",
     },
     primaryCta: {
       en: "EXPLORE WORK",
       tr: "PROJELERİ İNCELE",
     },
     captionFigure: {
-      en: "FIG 1.0 : FULL STACK ENGINEER",
-      tr: "ŞEKİL 1.0 : FULL STACK MÜHENDİS",
+      en: "FIG 1.0 : BERKAY ACAR",
+      tr: "ŞEKİL 1.0 : BERKAY ACAR",
     },
     captionLocation: {
       en: "ISTANBUL, TR",
       tr: "İSTANBUL, TR",
     },
     badgeTopLeft: {
-      en: "LET'S GO!",
-      tr: "BAŞLAYALIM!",
+      en: "SYS_STATUS: STABLE",
+      tr: "DURUM: STABİL",
     },
     badgeTopRight: {
-      en: "ROCK SOLID",
-      tr: "KAYA GİBİ",
+      en: "MEASURE TWICE, CUT ONCE",
+      tr: "KIRK ÖLÇ, BİR BİÇ",
     },
     badgeBottomRight: {
-      en: "STAY POSITIVE",
-      tr: "POZİTİF KAL",
+      en: "TRY KONAMI CODE",
+      tr: "KONAMI KODUNU DENE",
     },
     imagePath: "/assets/comic_hero_mascot.jpg",
     githubUrl: "https://github.com/Berkawaii",
@@ -291,60 +291,60 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         tr: "Kurumsal B2B Müşteri",
       },
       detail: {
-        en: "High-concurrency daily field sales operations",
-        tr: "Günlük yüksek hacimli saha satış operasyonları",
+        en: "Düzey Market B2B ordering & nationwide distribution",
+        tr: "Düzey Market B2B sipariş ve ülke çapında dağıtım",
       },
       bgColor: "bg-[#70D6FF]",
     },
     {
       id: "m-2",
-      value: "30%",
+      value: "5",
       label: {
-        en: "Hosting Costs Slashed",
-        tr: "Sunucu Maliyeti Tasarrufu",
+        en: "Enterprise Systems Shipped",
+        tr: "Canlı Kurumsal Sistem",
       },
       detail: {
-        en: "Consolidated legacy stack to .NET Core engine",
-        tr: "Eski sistemlerin .NET Core çekirdeğine taşınması",
+        en: "Sun-Engine, Expense PWA, Discount Portal, B2B Web & Mobile",
+        tr: "Sun-Engine, Masraf PWA, İskonto Portalı, B2B Web & Mobil",
       },
       bgColor: "bg-[#CCFF00]",
     },
     {
       id: "m-3",
-      value: "75%",
+      value: ".NET 9",
       label: {
-        en: "Paperwork Automated",
-        tr: "Evrak İşi Otomasyonu",
+        en: "Legacy-to-Modern Migration",
+        tr: "Eski Sistemden Modernizasyon",
       },
       detail: {
-        en: "Embedded AI assistant in UniCoWallet platform",
-        tr: "UniCoWallet içerisine entegre yapay zeka asistanı",
+        en: "Ported Java/JHipster expense & ERP flows into modular plugins",
+        tr: "Java/JHipster masraf ve ERP akışlarının modüler eklentilere taşınması",
       },
       bgColor: "bg-[#FF70A6]",
     },
     {
       id: "m-4",
-      value: "Sub-50ms",
+      value: "30+",
       label: {
-        en: "API Response Latency",
-        tr: "API Yanıt Süresi",
+        en: "Custom Commerce & ERP Plugins",
+        tr: "Özel E-Ticaret & ERP Eklentisi",
       },
       detail: {
-        en: "Optimized SAP ERP data sync microservices",
-        tr: "Optimize edilmiş SAP ERP veri senkronizasyon mikroservisleri",
+        en: "Pricing engine, SAP/Panorama sync, Iyzico/Netahsilat/TokenFlex",
+        tr: "Fiyat motoru, SAP/Panorama senkronizasyonu, Iyzico/Netahsilat/TokenFlex",
       },
       bgColor: "bg-[#FF5400] text-white",
     },
     {
       id: "m-5",
-      value: "4.5+ Yrs",
+      value: "5+ Yrs",
       label: {
-        en: "Enterprise Engineering",
-        tr: "Kurumsal Mühendislik",
+        en: "Full Stack & Mobile Engineering",
+        tr: "Full Stack & Mobil Mühendislik",
       },
       detail: {
-        en: "High-concurrency mobile, .NET microservices and distributed data",
-        tr: "Yüksek eşzamanlı mobil, .NET mikroservisler ve dağıtık veri",
+        en: ".NET, React/Next.js, Flutter, SQL/Firestore & applied AI",
+        tr: ".NET, React/Next.js, Flutter, SQL/Firestore ve uygulamalı yapay zeka",
       },
       bgColor: "bg-[#FFFFFF]",
     },
@@ -355,208 +355,343 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "KURUMSAL MÜHENDİSLİK VAKA ÇALIŞMALARI",
     },
     subheading: {
-      en: "Real-world production systems engineered for Düzey and enterprise partners: problem framing, architectural trade-offs, and measurable outcomes.",
-      tr: "Düzey ve kurumsal ortaklar için geliştirilen üretim sistemleri: problem tanımı, mimari tercihler ve ölçülebilir sonuçlar.",
+      en: "Production systems engineered for Düzey Pazarlama and Koç Holding commercial operations: problem framing, architectural trade-offs, and measurable outcomes.",
+      tr: "Düzey Pazarlama ve Koç Holding ticari operasyonları için geliştirilen canlı sistemler: problem tanımı, mimari tercihler ve ölçülebilir sonuçlar.",
     },
     items: [
       {
-        id: "unicowallet-fintech",
+        id: "sun-engine-core",
         title: {
-          en: "UniCoWallet Platform & Agentic AI Assistant",
-          tr: "UniCoWallet Platformu & Otonom Yapay Zeka Asistanı",
+          en: "Sun-Engine: Core SFA, Pricing & Enterprise Backend",
+          tr: "Sun-Engine: SFA, Fiyat Motoru ve Kurumsal Backend",
         },
         category: {
-          en: "FINTECH & MOBILE",
-          tr: "FİNTEK & MOBİL",
+          en: "ENTERPRISE BACKEND & ERP",
+          tr: "KURUMSAL BACKEND & ERP",
         },
         client: {
-          en: "Düzey (500+ Internal Employees)",
-          tr: "Düzey (500+ Kurum İçi Çalışan)",
+          en: "Düzey Pazarlama A.Ş. (Koç Holding)",
+          tr: "Düzey Pazarlama A.Ş. (Koç Holding)",
         },
-        period: "2023 - Present",
+        period: "2024 - Present",
         role: {
-          en: "Full Stack & Mobile Engineer",
-          tr: "Full Stack & Mobil Mühendisi",
+          en: "Full Stack & Backend Engineer",
+          tr: "Full Stack & Backend Mühendisi",
         },
         summary: {
-          en: "Engineered an enterprise digital wallet consolidating employee meal, expense, and travel allowances into a unified ledger with automated approval workflows.",
-          tr: "Çalışan yemek, masraf ve seyahat harcırahlarını otomatik onay süreçleriyle birleştiren kurumsal dijital cüzdan sistemini geliştirdim.",
+          en: "Unified .NET 9 / nopCommerce 4.80.6 modular plugin backend powering Digital Expense Management, Commercial Discount Approvals, SFA pricing calculation, and Panorama/SAP ERP synchronization.",
+          tr: "Dijital Masraf Yönetimi, Ticari İskonto Onayı, SFA fiyat/koşul hesaplama ve Panorama/SAP ERP senkronizasyonunu tek çekirdekte toplayan .NET 9 / nopCommerce 4.80.6 modüler eklenti backend motoru.",
         },
         problem: {
-          en: "Managing expense and travel allowances for 500+ staff relied entirely on paper receipts and manual approvals, generating review delays and invoice auditing friction.",
-          tr: "500'den fazla personelin harcama ve seyahat izinleri tamamen kağıt evraklar ve manuel onaylarla yürütülüyor, bu da onay gecikmelerine ve denetim yüküne yol açıyordu.",
+          en: "Internal expense workflows ran on a separate legacy Java Spring Boot/JHipster stack while commercial discount approvals, customer-specific SFA pricing matrices, and ERP sync jobs lived in fragmented services with duplicated auth and data models.",
+          tr: "Kurum içi masraf süreçleri ayrı bir Java Spring Boot/JHipster yapısında çalışırken, ticari iskonto onayları, müşteri bazlı SFA fiyat matrisleri ve ERP senkronizasyonları dağınık servislerde tutuluyor ve bakım maliyetini artırıyordu.",
         },
         approach: {
-          en: "Decoupled the architecture into 3 services: Transaction Engine, Immutable Ledger, and an AI Document Processor for OCR receipt extraction.",
-          tr: "Mimarisi 3 ana parçaya ayrıldı: İşlem Motoru, Değişmez Muhasebe Defteri ve OCR fiş ayrıştırması yapan Yapay Zeka Belge İşlemcisi.",
+          en: "Consolidated the ecosystem onto .NET 9 modular plugins: ported ExpenseManagement with 3-tier services and immutable C# record DTOs, built DiscountRequest with deferred matrix loading, brand-level price masking and an AI approval assistant backend, and engineered SalesEngine + PriceSync/DiscountSync/CustomerSync + Panorama SOAP integration.",
+          tr: "Ekosistemi .NET 9 modüler eklenti mimarisinde birleştirdim: ExpenseManagement eklentisini 3 katmanlı servisler ve immutable C# record DTO'larla port ettim; gecikmeli matris yüklemeli, marka bazlı fiyat maskelemeli ve yapay zeka asistanlı DiscountRequest eklentisini, ayrıca çok kriterli SalesEngine fiyat motorunu ve Panorama SOAP/Sync eklentilerini geliştirdim.",
         },
         tradeoffs: {
-          en: "Enforced strict idempotency keys across all payment mutations to eliminate double-spend risks during cell network disconnects.",
-          tr: "Hücresel ağ kopmalarında mükerrer harcama riskini önlemek için tüm ödeme mutasyonlarında katı eşgüçlülük (idempotency) anahtarlarını zorunlu tuttum.",
+          en: "Chose manual entity-to-DTO mappers over AutoMapper to preserve compile-time safety and eliminate circular serialization graphs, and deferred discount matrix queries behind explicit user triggers to keep approval detail endpoints fast under heavy ERP payloads.",
+          tr: "Derleme zamanı güvenliği ve döngüsel referansları önlemek için AutoMapper yerine açık manuel mapper sınıflarını tercih ettim; yoğun ERP yüklerinde yanıt süresini korumak için mevcut iskonto matrisini gecikmeli (deferred) yükleme arkasına aldım.",
         },
         impactMetricsEn: [
-          "75% physical paperwork reduction across internal operations",
-          "Sub-100ms financial transaction authorization latency",
-          "Zero ledger divergence with idempotent transactional write guarantees",
-          "Zero-trust RBAC architecture with biometric and JWT authentication",
+          "Migrated Java/JHipster expense domain to .NET 9 with 13 DTOs, 8 mappers, and 13 tiered services",
+          "Multi-criteria SFA pricing engine across brand, channel, segment, city, tax, and scale factors",
+          "Automated Panorama SOAP, price, discount, and customer sync pipelines with OTP auth",
+          "Role-aware price masking and AI assistant context endpoints for commercial approvals",
         ],
         impactMetricsTr: [
-          "Kurum içi operasyonlarda fiziksel evrak işinde %75 azalma",
-          "100ms altında finansal işlem yetkilendirme gecikmesi",
-          "Eşgüçlü yazma garantileri ile sıfır bakiye tutarsızlığı",
-          "Biyometrik ve JWT kimlik doğrulamalı sıfır güvenli RBAC mimarisi",
+          "Java/JHipster masraf altyapısı 13 DTO, 8 mapper ve 13 katmanlı servisle .NET 9'a taşındı",
+          "Marka, kanal, segment, şehir, vergi ve ölçek kriterli çok boyutlu SFA fiyat motoru",
+          "OTP doğrulamalı Panorama SOAP, fiyat, iskonto ve müşteri senkronizasyon hatları",
+          "Ticari onaylar için rol bazlı fiyat maskeleme ve yapay zeka asistanı API katmanı",
         ],
         techStack: [
-          ".NET Core",
+          ".NET 9",
           "C#",
-          "Flutter",
-          "Dart",
-          "PostgreSQL",
-          "Redis",
-          "Docker",
-          "Azure DevOps",
+          "nopCommerce 4.80",
+          "MSSQL",
+          "SAP ERP",
+          "Panorama SOAP",
+          "REST API",
+          "JWT / Entra ID",
         ],
         badgeText: {
-          en: "ENTERPRISE FINTECH",
-          tr: "KURUMSAL FİNTEK",
+          en: "CORE ENGINE",
+          tr: "ÇEKİRDEK MOTOR",
         },
         badgeColor: "orange",
         architectureDetails: {
-          en: "Decoupled microservice architecture: Transaction Engine, Ledger Auditor, and AI Document Processor with strict idempotency keys.",
-          tr: "İşlem Motoru, Defter Denetçisi ve Yapay Zeka Belge İşlemcisine ayrılmış, katı eşgüçlülük anahtarlarına sahip mikroservis mimarisi.",
+          en: "Modular .NET 9 plugin host uniting ExpenseManagement, DiscountRequest, SalesEngine pricing schemas, Panorama SOAP integration, and background sync workers.",
+          tr: "ExpenseManagement, DiscountRequest, SalesEngine fiyat şemaları, Panorama SOAP entegrasyonu ve senkronizasyon servislerini barındıran modüler .NET 9 eklenti çekirdeği.",
         },
-        imagePath: "/assets/comic_unicowallet.jpg",
+        imagePath: "/assets/comic_realtime_engine.jpg",
       },
       {
-        id: "b2b-sales-engine",
+        id: "duzey-masraf-pwa",
         title: {
-          en: "30,000+ B2B Client & Sales Engine",
-          tr: "30.000+ B2B Müşteri & Satış Motoru",
+          en: "Düzey Masraf: Digital Expense & Approval PWA",
+          tr: "Düzey Masraf: Dijital Masraf ve Onay PWA",
         },
         category: {
-          en: "HIGH-SCALE MOBILITY",
-          tr: "YÜKSEK ÖLÇEKLİ MOBİLİTE",
+          en: "ENTERPRISE WEB & PWA",
+          tr: "KURUMSAL WEB & PWA",
         },
         client: {
-          en: "Düzey (30,000+ Enterprise Clients)",
-          tr: "Düzey (30.000+ Kurumsal Müşteri)",
+          en: "Düzey Tüketim Malları A.Ş.",
+          tr: "Düzey Tüketim Malları A.Ş.",
         },
-        period: "2022 - Present",
+        period: "2025 - Present",
         role: {
-          en: "Senior Full Stack & Mobile Engineer",
-          tr: "Kıdemli Full Stack & Mobil Mühendisi",
+          en: "Full Stack Engineer",
+          tr: "Full Stack Mühendisi",
         },
         summary: {
-          en: "Cross-platform mobile apps using Flutter and .NET Core powering daily field sales operations for nationwide distributor networks.",
-          tr: "Ülke çapındaki distribütör ağlarının günlük saha satış operasyonlarını yürüten Flutter ve .NET Core tabanlı çapraz platform mobil uygulamalar.",
+          en: "Installable React 19 + TypeScript PWA digitizing employee receipts, 7-role expense approvals, PDF statement dispatch, SAP FI handoff, and an embedded Gemini-powered Muhittin assistant.",
+          tr: "Çalışan fiş/fatura girişini, 7 rollü çok kademeli onay akışını, PDF döküm iletimini, SAP FI aktarımını ve Gemini destekli Muhittin asistanını sunan kurulabilir React 19 + TypeScript PWA uygulaması.",
         },
         problem: {
-          en: "Field sales agents operating across nationwide retail routes faced frequent connectivity drops in underground warehouses, causing order sync failures and checkout delays.",
-          tr: "Ülke çapındaki perakende rotalarında çalışan saha temsilcileri depolarda sık sık bağlantı kopması yaşıyor, bu da sipariş senkronizasyon hatalarına ve gecikmelere yol açıyordu.",
+          en: "Field and office staff needed a fast mobile-capable workflow for receipt capture, multi-tier approval routing, and instant SAP FI validation.",
+          tr: "Saha ve ofis çalışanları; fiş yükleme, çok kademeli onay yönlendirme ve hızlı SAP FI aktarımı için mobil uyumlu bir sürece ihtiyaç duyuyordu.",
         },
         approach: {
-          en: "Engineered an offline-first Flutter application utilizing local SQLite storage, coupled with an event-driven background sync engine that pushes queued orders to .NET Core backends upon reconnection.",
-          tr: "Yerel SQLite depolaması kullanan çevrimdışı öncelikli Flutter uygulaması ve yeniden bağlantı kurulduğunda kuyruktaki siparişleri .NET Core sunucularına aktaran olay güdümlü senkronizasyon motoru geliştirdim.",
+          en: "Built a React 19 + Vite 8 PWA with Service Worker offline shell, client-side receipt compression, URL-persisted filters/pagination, full-filtered UTF-8 CSV export, MSAL Microsoft Entra ID SSO + JWT auth, Firestore live SSO/maintenance toggles, and the Muhittin smart assistant.",
+          tr: "Service Worker çevrimdışı kabuk destekli React 19 + Vite 8 PWA geliştirdim; istemci tarafı görsel sıkıştırma, URL tabanlı filtre/sayfa koruma, tüm filtrelere uygun UTF-8 CSV dışa aktarım, MSAL Entra ID SSO + JWT, Firestore canlı bakım/SSO anahtarları ve Muhittin asistanını entegre ettim.",
         },
         tradeoffs: {
-          en: "Accepted eventual consistency for non-critical telemetry to prioritize immediate local order placement and sub-second checkout speeds for field agents.",
-          tr: "Saha temsilcileri için anında sipariş kaydı ve bir saniyenin altında işlem hızını önceliklendirmek adına kritik olmayan telemetri verilerinde nihai tutarlılık (eventual consistency) modelini benimsedim.",
+          en: "Offloaded image compression to the browser canvas before upload to slash mobile bandwidth and Azure Blob payload size, and kept SSO/maintenance flags in Cloud Firestore for zero-redeploy operational control.",
+          tr: "Mobil veri tüketimini ve sunucu yükünü azaltmak için fiş görsellerini yükleme öncesi tarayıcıda sıkıştırdım; SSO ve bakım modu yönetimini yeniden dağıtım gerektirmeden anlık açıp kapatabilmek için Cloud Firestore'a bağladım.",
         },
         impactMetricsEn: [
-          "Sub-second mobile checkout and inventory reservation",
-          "Reliable offline-first operation across 30,000+ client touchpoints",
-          "40% reduction in deployment overhead via CI/CD pipelines",
-          "Automated beta staging via Firebase App Distribution",
+          "7-role RBAC approval pipeline from employee submission to SAP FI posting",
+          "Client-side receipt compression, batch PDF generation & full-filtered CSV export",
+          "Dual auth with Microsoft Entra ID (MSAL SSO), OTP password reset & impersonation",
+          "Firestore-driven live maintenance gate and Gemini-assisted Muhittin help panel",
         ],
         impactMetricsTr: [
-          "Bir saniyenin altında mobil sipariş tamamlama ve stok rezervasyonu",
-          "30.000+ kurumsal temas noktasında güvenilir çevrimdışı çalışma",
-          "CI/CD boru hatları ile dağıtım iş yükünde %40 tasarruf",
-          "Firebase App Distribution ile otomatik beta test aşamalandırması",
+          "Çalışan girişinden SAP FI kaydına kadar 7 rollü RBAC onay hattı",
+          "İstemci tarafı fiş sıkıştırma, toplu PDF döküm ve tam filtreli CSV dışa aktarım",
+          "Microsoft Entra ID (MSAL SSO), OTP şifre sıfırlama ve admin impersonation desteği",
+          "Firestore tabanlı canlı bakım kapısı ve Gemini destekli Muhittin yardımcı paneli",
         ],
         techStack: [
-          "Flutter",
-          "Dart",
-          "Riverpod",
-          ".NET Core",
-          "MSSQL",
-          "SQLite",
-          "Firebase App Distribution",
+          "React 19",
+          "TypeScript",
+          "Vite 8",
+          "PWA",
+          "MSAL Entra ID",
+          "Cloud Firestore",
+          "Gemini AI",
+          ".NET 9 API",
         ],
         badgeText: {
-          en: "30K+ CLIENTS",
-          tr: "30B+ MÜŞTERİ",
+          en: "EXPENSE PWA",
+          tr: "MASRAF PWA",
         },
         badgeColor: "blue",
         architectureDetails: {
-          en: "Dual-layer sync protocol combining local SQLite cache with event-driven background queues syncing to enterprise .NET Core backends.",
-          tr: "Yerel SQLite önbelleğini kurumsal .NET Core sunucularına bağlayan olay güdümlü arkaplan kuyruklu çift katmanlı senkronizasyon.",
+          en: "React 19 + Vite 8 installable PWA communicating with Sun-Engine REST APIs, backed by MSAL Entra ID SSO and Firestore runtime flags.",
+          tr: "Sun-Engine REST API'leriyle haberleşen, MSAL Entra ID SSO ve Firestore canlı ayarlarıyla desteklenen React 19 + Vite 8 PWA mimarisi.",
         },
       },
       {
-        id: "dynamic-delivery-routing",
+        id: "iskonto-talep-portal",
         title: {
-          en: "SAP ERP Pipeline & Delivery Routing",
-          tr: "SAP ERP Veri Hattı & Sevkiyat Yönlendirme",
+          en: "İskonto Talep: Commercial Discount & Pricing Portal",
+          tr: "İskonto Talep: Ticari İskonto ve Özel Fiyat Onay Portalı",
         },
         category: {
-          en: "ENTERPRISE MODERNIZATION",
-          tr: "KURUMSAL MODERNİZASYON",
+          en: "B2B COMMERCIAL WORKFLOW",
+          tr: "B2B TİCARİ İŞ AKIŞI",
         },
         client: {
-          en: "Düzey Logistics",
-          tr: "Düzey Lojistik",
+          en: "Düzey Pazarlama A.Ş. (Sales & Finance)",
+          tr: "Düzey Pazarlama A.Ş. (Satış & Finans)",
         },
-        period: "2021 - 2023",
+        period: "2025 - Present",
+        role: {
+          en: "Full Stack Engineer",
+          tr: "Full Stack Mühendisi",
+        },
+        summary: {
+          en: "Next.js 16 + TypeScript enterprise approval portal enabling sales reps, regional directors, and financial controllers to create, audit, and approve commercial discount and special price requests.",
+          tr: "Satış ekipleri, bölge müdürleri ve finans onaycıları için iskonto ile özel fiyat taleplerinin oluşturulup denetlendiği Next.js 16 + TypeScript tabanlı kurumsal onay portalı.",
+        },
+        problem: {
+          en: "Evaluating B2B commercial discounts across dozens of product lines, distributor tiers, and regional approval rules lacked clear audit timelines, role-scoped price visibility, and mobile-friendly quick approvals.",
+          tr: "Çok sayıda ürün grubu, bayi katmanı ve bölgesel kural içeren B2B iskonto taleplerinin incelenmesinde net onay tarihçesi, rol bazlı fiyat gizliliği ve mobil hızlı onay akışı eksikti.",
+        },
+        approach: {
+          en: "Engineered a dual-theme Next.js 16 + Tailwind CSS 4 portal with a 4-step dynamic request wizard, quick approval workspace, role-gated KC Excel template management, deferred current discount matrix loading, hidden-price masking, grouped audit timelines, and proactive AI assistant nudges.",
+          tr: "Çift temalı Next.js 16 + Tailwind CSS 4 arayüzüyle 4 adımlı talep sihirbazı, hızlı onay ekranı, rol bazlı KC Excel şablon/raporlama, gecikmeli mevcut iskonto matrisi, gizli fiyat maskeleme, gruplanmış onay tarihçesi ve proaktif AI asistan uyarıları geliştirdim.",
+        },
+        tradeoffs: {
+          en: "Used static export-friendly client state with strict JWT route guards and step-grouped history deduplication so reviewers inspect clean state transitions without redundant audit noise.",
+          tr: "Katı JWT rota korumalarıyla statik dağıtıma uygun istemci mimarisi kullandım; onay geçmişinde tekrar eden adımları gruplayarak yöneticilere sade bir denetim izi sundum.",
+        },
+        impactMetricsEn: [
+          "4-step dynamic request wizard with product picker and parameter validation",
+          "Role-gated KC Excel reporting, deferred discount matrix & hidden price masking",
+          "Deduplicated approval value history timeline and mobile quick-approval flow",
+          "Proactive AI Approval Assistant nudges embedded directly in request forms",
+        ],
+        impactMetricsTr: [
+          "Ürün seçicili ve parametre doğrulamalı 4 adımlı dinamik talep sihirbazı",
+          "Rol yetkili KC Excel raporlama, gecikmeli iskonto matrisi ve gizli fiyat maskeleme",
+          "Tekilleştirilmiş onay değer tarihçesi ve mobil uyumlu hızlı onay akışı",
+          "Talep formlarına gömülü proaktif Yapay Zeka Onay Asistanı yönlendirmeleri",
+        ],
+        techStack: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Axios",
+          "JWT Auth",
+          "AI Assistant",
+          ".NET 9 API",
+        ],
+        badgeText: {
+          en: "DISCOUNT PORTAL",
+          tr: "İSKONTO PORTALI",
+        },
+        badgeColor: "lime",
+        architectureDetails: {
+          en: "Next.js 16 App Router frontend integrated with Sun-Engine DiscountRequest APIs, JWT Bearer auto-logout guards, and contextual AI review nudges.",
+          tr: "Sun-Engine DiscountRequest API'leri, JWT Bearer otomatik çıkış korumaları ve bağlamsal yapay zeka asistanıyla entegre Next.js 16 App Router ön yüzü.",
+        },
+      },
+      {
+        id: "duzey-market-b2b-backend",
+        title: {
+          en: "Düzey Market: Enterprise B2B E-Commerce Engine",
+          tr: "Düzey Market: Kurumsal B2B E-Ticaret Motoru",
+        },
+        category: {
+          en: "B2B E-COMMERCE BACKEND",
+          tr: "B2B E-TİCARET BACKEND",
+        },
+        client: {
+          en: "Düzey Market (30,000+ B2B Clients)",
+          tr: "Düzey Market (30.000+ B2B Müşteri)",
+        },
+        period: "2022 - Present",
         role: {
           en: "Senior Full Stack Engineer",
           tr: "Kıdemli Full Stack Mühendisi",
         },
         summary: {
-          en: "Modernized legacy monolithic Java and Angular systems into a unified .NET Core, React, and Next.js stack, streamlining high-throughput data sync between SAP ERP and field sales.",
-          tr: "Eski Java ve Angular sistemlerini birleşik .NET Core, React ve Next.js altyapısına modernize ederek SAP ERP ile saha temsilcileri arasındaki veri senkronizasyonunu hızlandırdım.",
+          en: "High-concurrency .NET 7 / nopCommerce 4.60 B2B commerce platform extended with 30+ custom Düzey plugins serving 30,000+ corporate buyers, SAP stock reservation, and multi-gateway B2B payments.",
+          tr: "30.000+ kurumsal müşteriye hizmet veren, 30'dan fazla özel Düzey eklentisi, SAP stok rezervasyonu ve çoklu B2B ödeme geçitleriyle genişletilmiş .NET 7 / nopCommerce 4.60 e-ticaret çekirdeği.",
         },
         problem: {
-          en: "A legacy monolithic Java and Angular stack caused severe database write-locks on the core SAP ERP during morning peak ordering hours, inflating infrastructure hosting bills.",
-          tr: "Eski monolitik Java ve Angular altyapısı, sabah yoğun sipariş saatlerinde ana SAP ERP üzerinde ciddi veritabanı kilitlenmelerine yol açıyor ve sunucu maliyetlerini artırıyordu.",
+          en: "High-volume B2B ordering across thousands of SKUs and customer-specific price tiers caused cache misses on virtual/parent SKUs, coupled cart/order price trace contention, and fragile SAP stock synchronization.",
+          tr: "Binlerce SKU ve müşteri özel fiyat katmanlarında yüksek hacimli B2B siparişleri; sanal/ana SKU önbellek sapmalarına, sepet/sipariş fiyat izi çakışmalarına ve SAP stok tutarsızlıklarına yol açıyordu.",
         },
         approach: {
-          en: "Introduced an asynchronous message brokering pipeline that buffered and throttled incoming mobile transactions before communicating with SAP, while modernizing frontend applications to .NET Core and Next.js.",
-          tr: "SAP ile iletişim kurmadan önce gelen mobil işlemleri arabelleğe alan ve dengeleyen asenkron mesajlaşma katmanı kurdum; ön yüzü .NET Core ve Next.js mimarisine modernize ettim.",
+          en: "Built and maintained 30+ custom plugins on .NET 7 including DuzeyDiscountRules, DuzeyCheckoutValidator, DuzeyFlow, DuzeyTierPriceImport, OtpAuthenticator, PanoramaIntegration, and payment integrations (Iyzico + AccountSettler, Netahsilat, TokenFlex, DuzeyGateway), while decoupling order-item price traces from cart traces and implementing virtual SKU parent caching + SAP reserved stock percentages.",
+          tr: ".NET 7 üzerinde DuzeyDiscountRules, DuzeyCheckoutValidator, DuzeyFlow, DuzeyTierPriceImport, OtpAuthenticator, PanoramaIntegration ve Iyzico/AccountSettler, Netahsilat, TokenFlex, DuzeyGateway ödeme eklentilerini içeren 30+ modül geliştirdim; sipariş ve sepet fiyat izlerini ayrıştırdım, sanal SKU önbelleği ve SAP rezerve stok kontrolü ekledim.",
         },
         tradeoffs: {
-          en: "Replaced synchronous write-waiting with transactional event queues, introducing message replay mechanisms to handle downstream ERP downtime gracefully.",
-          tr: "Senkron doğrudan yazma yerine kuyruk tabanlı modeli benimsedim; ERP kesintilerini yönetmek için mesaj yeniden oynatma mekanizmaları ekledim.",
+          en: "Added explicit parent-SKU cache keys and reserved stock thresholds instead of live synchronous SAP roundtrips on every cart mutation, protecting checkout latency under peak morning order bursts.",
+          tr: "Her sepet güncellemesinde senkron SAP çağrısı yapmak yerine ana SKU önbellek anahtarları ve rezerve stok eşikleri kullanarak sabah yoğunluğunda sipariş tamamlama hızını korudum.",
         },
         impactMetricsEn: [
-          "30% reduction in monthly infrastructure and hosting bills",
-          "25% drop in field order fulfillment roundtrip latency",
-          "Decoupled SAP transactional write-locks from mobile query bursts",
-          "Unified .NET Core and modern React/Next.js maintainable stack",
+          "Powers daily B2B ordering for 30,000+ nationwide retail & corporate buyers",
+          "30+ custom .NET 7 plugins covering pricing, checkout validation, gamification & ERP",
+          "Decoupled cart/order price traces & virtual SKU caching for fast catalog browsing",
+          "Multi-provider B2B payments: Iyzico, Netahsilat, TokenFlex & custom gateways",
         ],
         impactMetricsTr: [
-          "Aylık altyapı ve sunucu maliyetlerinde %30 azalma",
-          "Saha sipariş karşılama gecikmesinde %25 düşüş",
-          "SAP yazma kilitlerini mobil ani işlem yüklerinden bağımsızlaştırma",
-          "Sürdürülebilir .NET Core ve modern React/Next.js altyapısı",
+          "Ülke çapında 30.000+ kurumsal alıcının günlük B2B siparişlerini yönetir",
+          "Fiyatlama, sepet doğrulama, oyunlaştırma ve ERP için 30+ özel .NET 7 eklentisi",
+          "Ayrıştırılmış sepet/sipariş fiyat izleri ve sanal SKU önbellekleme",
+          "Çoklu B2B ödeme altyapısı: Iyzico, Netahsilat, TokenFlex ve özel geçitler",
         ],
         techStack: [
-          ".NET Core",
+          ".NET 7",
           "C#",
+          "nopCommerce 4.60",
+          "MSSQL",
           "SAP ERP",
-          "React",
-          "Next.js",
-          "Redis",
-          "PostgreSQL",
+          "Iyzico",
+          "Netahsilat",
+          "TokenFlex",
+          "WebApi",
         ],
         badgeText: {
-          en: "LOGISTICS ENGINE",
-          tr: "LOJİSTİK MOTORU",
+          en: "30K+ B2B",
+          tr: "30B+ B2B",
         },
-        badgeColor: "lime",
+        badgeColor: "pink",
         architectureDetails: {
-          en: "Asynchronous message brokering layer decoupling SAP ERP transactional write-locks from mobile client query bursts.",
-          tr: "SAP ERP işlemsel kilitlerini mobil istemci sorgu patlamalarından ayıran asenkron mesaj aracılık katmanı.",
+          en: "Plugin-driven .NET 7 / nopCommerce 4.60 enterprise commerce core with SAP stock error management, parent-SKU price caching, and multi-gateway payment orchestration.",
+          tr: "SAP stok hata yönetimi, ana SKU fiyat önbelleklemesi ve çoklu ödeme orkestrasyonuna sahip eklenti tabanlı .NET 7 / nopCommerce 4.60 kurumsal ticaret çekirdeği.",
+        },
+      },
+      {
+        id: "duzey-market-b2b-mobile",
+        title: {
+          en: "Düzey Market Mobile: Hybrid B2B & Field App",
+          tr: "Düzey Market Mobil: Hibrit B2B ve Saha Uygulaması",
+        },
+        category: {
+          en: "B2B MOBILE APPLICATION",
+          tr: "B2B MOBİL UYGULAMA",
+        },
+        client: {
+          en: "Düzey Market (B2B Buyers & Field Staff)",
+          tr: "Düzey Market (B2B Müşteriler & Saha)",
+        },
+        period: "2023 - Present",
+        role: {
+          en: "Mobile & Full Stack Engineer",
+          tr: "Mobil & Full Stack Mühendisi",
+        },
+        summary: {
+          en: "Cross-platform Flutter & Dart mobile application unifying the B2B customer storefront and internal staff portal with native camera barcode scanning and Smart Ready Basket workflows.",
+          tr: "B2B müşteri mağazasını ve kurum içi personel portalını yerel kamera barkod tarama ve Akıllı Sepet akışlarıyla birleştiren Flutter & Dart tabanlı çapraz platform mobil uygulama.",
+        },
+        problem: {
+          en: "B2B shop owners and field sales staff needed instant shelf-side barcode ordering across both customer (duzeymarket.com) and staff (personel.duzeymarket.com) portals without maintaining separate native codebases.",
+          tr: "B2B esnaf ve saha satış ekipleri; hem müşteri (duzeymarket.com) hem personel (personel.duzeymarket.com) portallarına tek uygulamadan erişip raf başında kamerayla barkod okutarak anında sipariş vermek istiyordu.",
+        },
+        approach: {
+          en: "Engineered a hybrid Flutter + GetX architecture combining native screens (Smart Ready Basket / Akıllı Sepet, Iyzico payment view, announcements, cookie consent) with an optimized WebView bridge and a draggable floating barcode scanner powered by mobile_scanner.",
+          tr: "Akıllı Sepet, Iyzico ödeme, duyuru ve çerez izin ekranlarını; optimize edilmiş bir WebView köprüsü ve mobile_scanner tabanlı sürüklenebilir yüzer barkod okuma butonuyla birleştiren Flutter + GetX hibrit mimarisi geliştirdim.",
+        },
+        tradeoffs: {
+          en: "Paired a shared WebView bridge for rapidly evolving web promotions and pricing rules with native Dart camera scanning and GetX state controllers, delivering instant parity with the .NET B2B backend.",
+          tr: "Hızla değişen kampanya ve fiyat kurallarını anında yansıtmak için WebView köprüsünü kullanırken, donanım gerektiren barkod okuma ve hızlı menü akışlarını yerel Flutter/GetX katmanında tuttum.",
+        },
+        impactMetricsEn: [
+          "Dual-mode storefront & staff portal switching (duzeymarket.com & personel)",
+          "Native camera barcode scan injected directly into live B2B catalog search",
+          "Draggable floating barcode trigger + Smart Ready Basket & Iyzico modules",
+          "Single Flutter/Dart codebase shipping across Android and iOS",
+        ],
+        impactMetricsTr: [
+          "Çift modlu müşteri mağazası ve personel portalı geçişi (duzeymarket & personel)",
+          "Yerel kamera barkod taramasının doğrudan canlı B2B ürün aramasına aktarımı",
+          "Sürüklenebilir barkod butonu, Akıllı Sepet ve Iyzico ödeme modülleri",
+          "Android ve iOS için tek Flutter/Dart kod tabanıyla üretim dağıtımı",
+        ],
+        techStack: [
+          "Flutter",
+          "Dart",
+          "GetX",
+          "WebView Bridge",
+          "Mobile Scanner",
+          "Android & iOS",
+        ],
+        badgeText: {
+          en: "MOBILE B2B",
+          tr: "MOBİL B2B",
+        },
+        badgeColor: "blue",
+        architectureDetails: {
+          en: "GetX reactive ViewModel orchestrating native Flutter barcode scanning, draggable overlay controls, and authenticated B2B/staff WebView sessions.",
+          tr: "Yerel Flutter barkod tarama, sürüklenebilir arayüz kontrolleri ve kimlik doğrulamalı B2B/personel WebView oturumlarını yöneten GetX reaktif mimari.",
         },
       },
     ],
@@ -567,25 +702,25 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "SİSTEM MİMARİSİ VE TEKNİK CEPHANE",
     },
     subheading: {
-      en: "Rigorous full stack competencies built across 4.5+ years of enterprise engineering: from low-level memory allocation in C# to high-performance Flutter runtimes.",
-      tr: "4.5+ yıllık kurumsal mühendislikte inşa edilmiş yetkinlikler: C#'ta düşük seviyeli bellek yönetiminden yüksek performanslı Flutter çalışma zamanlarına.",
+      en: "Production competencies forged across 5+ years of enterprise .NET backends, modern React/Next.js portals, Flutter mobile apps, and real-time WebRTC R&D.",
+      tr: "5+ yıllık kurumsal .NET backend, modern React/Next.js portalları, Flutter mobil uygulamaları ve gerçek zamanlı WebRTC Ar-Ge projelerinde edinilmiş yetkinlikler.",
     },
     cells: [
       {
         id: "cell-backend",
         title: {
-          en: "Backend & Distributed Microservices",
-          tr: "Arkayüz & Dağıtık Mikroservisler",
+          en: ".NET Core & Enterprise ERP Backends",
+          tr: ".NET Core & Kurumsal ERP Backendleri",
         },
         summary: {
-          en: "Architecting decoupled microservice clusters in .NET Core and C#. Specializing in high-throughput API gateways, asynchronous message queues, and zero-allocation socket streams.",
-          tr: ".NET Core ve C# üzerinde bağımsız mikroservis kümeleri mimarisi. Yüksek hacimli API geçitleri, asenkron mesaj kuyrukları ve sıfır tahsisatlı soket akışları.",
+          en: "Architecting modular .NET 9 & .NET 7 backends on nopCommerce plugin ecosystems. Delivering SFA pricing engines, expense ledgers, RESTful APIs, and SAP / Panorama SOAP integrations.",
+          tr: "nopCommerce eklenti ekosistemi üzerinde modüler .NET 9 ve .NET 7 backend sistemleri. SFA fiyat motorları, masraf defterleri, REST API'ler ve SAP / Panorama SOAP entegrasyonları.",
         },
         tag: {
           en: "CORE SPECIALTY",
           tr: "ANA UZMANLIK",
         },
-        pills: [".NET Core", "C#", "RESTful APIs", "Microservices", "WebSockets", "Docker", "Node.js"],
+        pills: [".NET 9 / 7", "C#", "nopCommerce Plugins", "SAP / Panorama ERP", "RESTful APIs", "Docker"],
         bgColor: "bg-[#FF5400]",
         textColor: "text-white",
         colSpanDesktop: 7,
@@ -593,18 +728,18 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       {
         id: "cell-mobile",
         title: {
-          en: "Cross-Platform Mobile Engine",
-          tr: "Çapraz Platform Mobil Motor",
+          en: "React, Next.js & Flutter Frontends",
+          tr: "React, Next.js & Flutter Ön Yüzler",
         },
         summary: {
-          en: "Production-grade enterprise mobile apps engineered in Flutter and Dart. Zero frame drops, offline SQLite sync, and reactive state orchestration via Riverpod and GetX.",
-          tr: "Flutter ve Dart ile üretilmiş kurumsal kalitede mobil uygulamalar. Sıfır kare kaybı, çevrimdışı SQLite senkronizasyonu ve Riverpod ile reaktif durum yönetimi.",
+          en: "Shipping responsive internal enterprise PWAs in React 19 & Next.js 16 alongside cross-platform Flutter B2B apps with GetX, native barcode scanning, and offline Service Workers.",
+          tr: "React 19 ve Next.js 16 ile kurumsal PWA'lar; GetX, yerel barkod tarama ve çevrimdışı Service Worker destekli çapraz platform Flutter B2B mobil uygulamalar.",
         },
         tag: {
           en: "30K CLIENT SCALE",
           tr: "30B MÜŞTERİ ÖLÇEĞİ",
         },
-        pills: ["Flutter", "Dart", "Riverpod", "GetX", "Swift", "Offline SQLite"],
+        pills: ["React 19", "Next.js 16", "TypeScript", "Vite 8", "PWA", "Flutter", "Dart", "GetX"],
         bgColor: "bg-[#70D6FF]",
         textColor: "text-black",
         colSpanDesktop: 5,
@@ -612,18 +747,18 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       {
         id: "cell-ai",
         title: {
-          en: "Agentic AI Integration",
-          tr: "Otonom Yapay Zeka Entegrasyonu",
+          en: "Applied AI & Real-Time Protocols",
+          tr: "Uygulamalı AI & Gerçek Zamanlı Protokoller",
         },
         summary: {
-          en: "Integrating AI agents and embedded LLM assistants into business pipelines. Automated approvals, test generation, and intelligent system analysis.",
-          tr: "Yapay zeka ajanlarını ve gömülü LLM asistanlarını iş süreçlerine entegre etme. Otomatik onaylar, test üretimi ve akıllı sistem analizi.",
+          en: "Embedding Gemini & OpenAI assistants (Muhittin, Approval Nudges, AEGIS) into operational workflows, plus building sub-frame WebRTC P2P binary protocols and Three.js game loops.",
+          tr: "Operasyonel iş akışlarına Gemini & OpenAI asistanları (Muhittin, Onay Asistanı, AEGIS) entegre etme; ayrıca düşük gecikmeli WebRTC P2P ikili protokolleri ve Three.js oyun motorları.",
         },
         tag: {
-          en: "20% FASTER LEAD",
-          tr: "%20 HIZLI GELİŞTİRME",
+          en: "AI & P2P R&D",
+          tr: "AI & P2P AR-GE",
         },
-        pills: ["Antigravity SDK", "Cursor", "Claude", "LLM APIs", "Automated Tests"],
+        pills: ["Gemini / OpenAI APIs", "WebRTC P2P", "Binary Protocols", "Three.js", "LiveKit"],
         bgColor: "bg-[#CCFF00]",
         textColor: "text-black",
         colSpanDesktop: 4,
@@ -635,14 +770,14 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           tr: "Veritabanları & Önbellek Altyapısı",
         },
         summary: {
-          en: "Relational schema design, query optimization, and fast in-memory key-value caching to support concurrent transactions without lock contention.",
-          tr: "İlişkisel şema tasarımı, sorgu optimizasyonu ve kilitlenme olmadan eşzamanlı işlemleri destekleyen bellek içi anahtar-değer önbellekleme.",
+          en: "Relational schema optimization in MSSQL & PostgreSQL, parent-SKU price caching, Redis distributed state, and Cloud Firestore real-time configuration & signaling.",
+          tr: "MSSQL ve PostgreSQL ilişkisel şema optimizasyonu, ana SKU fiyat önbelleklemesi, Redis dağıtık durum yönetimi ve Cloud Firestore gerçek zamanlı yapılandırma ile sinyalleşme.",
         },
         tag: {
           en: "HIGH AVAILABILITY",
           tr: "YÜKSEK ERİŞİLEBİLİRLİK",
         },
-        pills: ["PostgreSQL", "MSSQL", "Redis", "Cloud Firestore", "SQLite"],
+        pills: ["MSSQL", "PostgreSQL", "Redis", "Cloud Firestore", "SQLite"],
         bgColor: "bg-[#F4EBD9]",
         textColor: "text-black",
         colSpanDesktop: 4,
@@ -650,18 +785,18 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       {
         id: "cell-devops",
         title: {
-          en: "DevOps & Enterprise Security",
-          tr: "DevOps & Kurumsal Güvenlik",
+          en: "Identity, Payments & Delivery",
+          tr: "Kimlik, Ödeme & Dağıtım",
         },
         summary: {
-          en: "Automated multi-stage CI/CD pipelines, containerization with Docker, and strict RBAC protocols utilizing JWT and OAuth2 standards.",
-          tr: "Otomatik çok aşamalı CI/CD hatları, Docker ile konteynerizasyon ve JWT ile OAuth2 standartlarını kullanan katı RBAC protokolleri.",
+          en: "Microsoft Entra ID (MSAL SSO), JWT & multi-role RBAC matrices, B2B payment gateways (Iyzico, Netahsilat, TokenFlex), and automated Firebase / CI/CD deployments.",
+          tr: "Microsoft Entra ID (MSAL SSO), JWT ve çok rollü RBAC matrisleri, B2B ödeme geçitleri (Iyzico, Netahsilat, TokenFlex) ve otomatik Firebase / CI/CD dağıtımları.",
         },
         tag: {
           en: "ZERO-TRUST",
           tr: "SIFIR GÜVEN",
         },
-        pills: ["Docker", "Azure DevOps", "CI/CD", "JWT/OAuth2", "RBAC", "GitLab"],
+        pills: ["Entra ID (MSAL)", "JWT / RBAC", "Iyzico / Netahsilat", "TokenFlex", "Firebase", "CI/CD"],
         bgColor: "bg-[#FF70A6]",
         textColor: "text-black",
         colSpanDesktop: 4,
@@ -674,10 +809,59 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "İMZA AR-GE VE DENEYSEL LABORATUVARLAR",
     },
     subheading: {
-      en: "Beyond commercial systems: exploratory laboratories testing low-latency binary streams, in-browser Roslyn compiler runtimes, and experimental motion physics.",
-      tr: "Ticari sistemlerin ötesinde: düşük gecikmeli ikili veri akışlarını, tarayıcı içi Roslyn derleyici çalışma ortamını ve hareket fiziğini test eden deneysel laboratuvarlar.",
+      en: "Beyond commercial systems: side projects and experimental labs exploring zero-install WebRTC browser consoles, low-latency audio comms, LLM state machines, and simulation engines.",
+      tr: "Ticari sistemlerin ötesinde: kurulumsuz WebRTC tarayıcı konsollarını, düşük gecikmeli ses iletişimini, LLM durum makinelerini ve simülasyon motorlarını test eden Ar-Ge ve yan projeler.",
     },
     items: [
+      {
+        id: "overcade",
+        title: {
+          en: "OVERCADE: Zero-Install WebRTC Browser Console",
+          tr: "OVERCADE: Kurulumsuz WebRTC Tarayıcı Konsolu",
+        },
+        badgeText: {
+          en: "WEBRTC CONSOLE",
+          tr: "WEBRTC KONSOL",
+        },
+        tabLabel: {
+          en: "Overcade",
+          tr: "Overcade",
+        },
+        period: "2026",
+        summary: {
+          en: "Turns any PC or Smart TV browser into a 1-4 player local couch-gaming console and smartphones into QR-paired wireless gamepads over zero-server-cost WebRTC P2P DataChannels. Ships 5 playable 60 FPS multiplayer games (Chrono Knights ARPG, Pico Protocol, Fired Up Overdrive, Vortex Drift 09, Ironclad Protocol) plus a 3D telemetry sandbox.",
+          tr: "Herhangi bir PC veya Akıllı TV tarayıcısını 1-4 oyunculu yerel konsola, akıllı telefonları ise QR kodla eşleşen kablosuz oyun kumandalarına dönüştüren sıfır sunucu maliyetli WebRTC P2P platformu. 5 oynanabilir 60 FPS çok oyunculu oyun (Chrono Knights ARPG, Pico Protocol, Fired Up Overdrive, Vortex Drift 09, Ironclad Protocol) ve 3D telemetri arenası içerir.",
+        },
+        architectureDetails: {
+          en: "Ephemeral Firestore SDP/ICE signaling (6-10 ops/session, immediately unsubscribed on connect) handing off to an unordered, zero-retransmit WebRTC UDP DataChannel streaming 8-byte ArrayBuffer gamepad packets and 8-byte host feedback telemetry (HP/MP/haptics/game mode) with zero GC pressure.",
+          tr: "Bağlantı kurulduğu anda kapanan geçici Firestore SDP/ICE sinyalleşmesi (oturum başı 6-10 işlem) sonrası sıralamasız ve yeniden iletimsiz WebRTC UDP DataChannel üzerinden 8 baytlık ikili ArrayBuffer kumanda paketleri ve 8 baytlık canlı geri bildirim telemetrisi (HP/MP/titreşim/mod) aktarır.",
+        },
+        impactMetricsEn: [
+          "8-byte binary ArrayBuffer gamepad & 8-byte host feedback protocol over UDP DataChannel",
+          "Zero-install QR pairing turning 1-4 smartphones into dynamic game-aware wireless controllers",
+          "5 full multiplayer titles powered by Three.js R3F, RPG-JS v5, and custom 60 FPS physics engines",
+          "Built-in camera QR scanner, floating analog stick, D-pad mode & custom controller layouts",
+        ],
+        impactMetricsTr: [
+          "UDP DataChannel üzerinde 8 baytlık ikili ArrayBuffer kumanda ve 8 baytlık geri bildirim protokolü",
+          "1-4 akıllı telefonu QR ile oyuna özel kablosuz kumandaya dönüştüren kurulumsuz eşleşme",
+          "Three.js R3F, RPG-JS v5 ve özel 60 FPS fizik motorlarıyla 5 tam çok oyunculu oyun",
+          "Dahili kamera QR tarayıcı, yüzer analog çubuk, D-pad modu ve özelleştirilebilir tuş düzeni",
+        ],
+        techStack: [
+          "React 19",
+          "TypeScript",
+          "WebRTC P2P",
+          "Three.js / R3F",
+          "RPG-JS v5",
+          "Cloud Firestore",
+          "Binary DataView",
+          "Tailwind CSS 4",
+        ],
+        imagePath: "/assets/overcade_console.jpg",
+        githubUrl: "https://github.com/Berkawaii/Overcade",
+        liveUrl: "https://overcade.web.app",
+      },
       {
         id: "cruwells-vox",
         title: {
@@ -685,14 +869,14 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           tr: "Cruwell's Vox Düşük Gecikmeli Ses & İletişim",
         },
         badgeText: {
-          en: "EXPERIMENTAL LAB",
-          tr: "DENEYSEL LAB",
+          en: "REAL-TIME LAB",
+          tr: "GERÇEK ZAMANLI LAB",
         },
         tabLabel: {
-          en: "CRUWELL'S : EXPERIMENTAL",
-          tr: "CRUWELL'S : DENEYSEL",
+          en: "Cruwell's Vox",
+          tr: "Cruwell's Vox",
         },
-        period: "2024",
+        period: "2026",
         summary: {
           en: "High-throughput real-time communication platform engineered for sub-20ms audio packet dispatch and peer synchronization under constrained bandwidth conditions.",
           tr: "Kısıtlı bant genişliği koşullarında 20ms altında ses paketi iletimi ve eşler arası senkronizasyon için tasarlanmış gerçek zamanlı iletişim platformu.",
@@ -712,104 +896,151 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
           "Kalp atışı probları ile hata toleranslı oda ağ durum yönetimi",
         ],
         techStack: [
-          ".NET Core",
-          "C#",
-          "WebSockets",
           "React",
-          "TypeScript",
-          "Web Audio API",
-          "Redis Pub/Sub",
+          "Electron",
+          "Firebase",
+          "LiveKit",
+          "SFU",
+          "Oracle",
+          "Firestore",
         ],
-        imagePath: "/assets/comic_realtime_engine.jpg",
-        githubUrl: "https://github.com/Berkawaii/cruwells-vox",
-        liveUrl: "https://cruwellsvox.dev",
-      },
-      {
-        id: "syntax-factory",
-        title: {
-          en: "Syntax Factory Roslyn WASM Engine",
-          tr: "Syntax Factory Roslyn WASM Motoru",
-        },
-        badgeText: {
-          en: "WASM PROTOTYPE",
-          tr: "WASM PROTOTİPİ",
-        },
-        tabLabel: {
-          en: "SYNTAX : WASM PROTOTYPE",
-          tr: "SYNTAX : WASM PROTOTİPİ",
-        },
-        period: "2023 - 2024",
-        summary: {
-          en: "Web-based simulation and interactive C# code generation game powered by real-time in-browser Roslyn compiler execution via WebAssembly.",
-          tr: "WebAssembly aracılığıyla tarayıcı içinde gerçek zamanlı Roslyn derleyici çalıştırma destekli web simülasyonu ve interaktif C# kod üretim oyunu.",
-        },
-        architectureDetails: {
-          en: "Roslyn syntax tree visitor running entirely client-side via Mono WASM runtime with isolated heap bounds.",
-          tr: "İzole yığın sınırlarına sahip Mono WASM çalışma zamanı ile tamamen istemci tarafında çalışan Roslyn sözdizimi ağacı gezgini.",
-        },
-        impactMetricsEn: [
-          "In-browser C# Roslyn compilation without server compute roundtrips",
-          "Interactive AST inspection and visual syntax graph construction",
-          "Deterministic code sandbox preventing memory leaks and runaway loops",
-        ],
-        impactMetricsTr: [
-          "Sunucuya ihtiyaç duymadan tarayıcı içinde doğrudan C# Roslyn derlemesi",
-          "İnteraktif AST incelemesi ve görsel sözdizimi grafiği oluşturma",
-          "Bellek sızıntılarını ve sonsuz döngüleri önleyen deterministik kod yalıtım alanı",
-        ],
-        techStack: [
-          "C#",
-          ".NET WASM",
-          "Roslyn Compiler API",
-          "React",
-          "TypeScript",
-          "Tailwind CSS",
-        ],
-        githubUrl: "https://github.com/Berkawaii",
-        liveUrl: "https://syntaxfactory.dev",
+        imagePath: "/assets/CRUWELL’S VOX_ Real-Time Audio Poster.png",
+        githubUrl: "https://github.com/Berkawaii/Cruwell-s-Vox",
+        liveUrl: "https://cruwellsvox.web.app/",
       },
       {
         id: "gri-archive",
         title: {
-          en: "Gri Archive Interactive Creative Lab",
-          tr: "Gri Arşiv İnteraktif Yaratıcı Lab",
+          en: "AEGIS: AUTONOMOUS PUZZLE ENGINE",
+          tr: "AEGIS: OTONOM BULMACA MOTORU",
         },
         badgeText: {
-          en: "UI EXPERIMENT",
-          tr: "ARAYÜZ DENEYİ",
+          en: "AI CONTROLLED",
+          tr: "YZ KONTROLLÜ",
         },
         tabLabel: {
-          en: "GRI : UI EXPERIMENT",
-          tr: "GRI : ARAYÜZ DENEYİ",
+          en: "EXPERIMENTAL AI GAME",
+          tr: "DENEYSEL YAPAY ZEKA OYUNU",
         },
-        period: "2023",
+        period: "2026",
         summary: {
-          en: "Curated frontend interactive archive and experimentation lab testing experimental layout models, micro-physics, and high-performance DOM render loops.",
-          tr: "Deneysel yerleşim modellerini, mikro fizik hareketlerini ve yüksek performanslı DOM render döngülerini test eden yaratıcı ön yüz arşivi.",
+          en: "Interactive, browser-based escape room powered by dynamic LLM reasoning and real-time state machines. Replaced static quest trees with an autonomous AI dungeon master that generates contextual puzzles, evaluates multimodal user input, and orchestrates live room states on the fly.",
+          tr: "Klasik kurgusal bulmaca ağaçlarını çöpe atan, yapay zeka güdümlü dinamik bir kaçış odası simülasyonu. Kullanıcı girdilerini gerçek zamanlı ayrıştıran, otonom bir AI karar motoru ile bağlama göre şekillenen bulmacalar ve anlık durum yönetimi sunar.",
         },
         architectureDetails: {
-          en: "Custom render scheduler synchronizing CSS transform matrices with device refresh rates.",
-          tr: "CSS dönüşüm matrislerini cihaz yenileme hızlarıyla senkronize eden özel render zamanlayıcı.",
+          en: "Modular event-driven architecture decoupled into Scenario Orchestrator, Dynamic Context Engine, and Prompt Sanitizer to prevent jailbreaking while maintaining deep narrative immersion.",
+          tr: "Senaryo Yöneticisi, Dinamik Context Motoru ve Jailbreak engelleme katmanıyla ayrıştırılmış, deterministik durum makineleri (FSM) üzerine kurulu modüler yapı.",
         },
         impactMetricsEn: [
-          "60fps hardware-accelerated fluid motion transitions",
-          "Zero layout shift design architecture with strict container bounds",
-          "Minimal DOM footprint with dynamic canvas rendering fallback",
+          "100% procedurally evaluated player interactions via custom agentic loops",
+          "Low-latency prompt-to-puzzle state transitions with local session caching",
+          "Deterministic win-condition validation guarded against LLM hallucinations",
+          "Zero pre-scripted clues; fully contextual narrative progression",
         ],
         impactMetricsTr: [
-          "60fps donanım hızlandırmalı akıcı hareket geçişleri",
-          "Katı kapsayıcı sınırlarıyla sıfır kümülatif düzen kayması (CLS)",
-          "Dinamik tuval (canvas) çizim yedeğiyle minimal DOM ayak izi",
+          "Sabit senaryo yerine tamamen ajan döngüleriyle işletilen dinamik oynanış",
+          "Halüsinasyonu engelleyen sıkı kural ve durum doğrulama katmanı",
+          "Kullanıcı kararlarına göre anında üretilen dinamik ipucu ve zorluk ölçekleme",
+          "Durum yönetimi ve context boyutunu minimize eden optimize prompt mimarisi",
         ],
         techStack: [
-          "Next.js",
           "TypeScript",
-          "Canvas API",
-          "Web Animations API",
-          "Tailwind CSS",
+          "React",
+          "OpenAI API / LLM",
+          "Node.js",
+          "TailwindCSS",
+          "Zustand",
+          "Render",
         ],
-        githubUrl: "https://github.com/Berkawaii",
-        liveUrl: "https://griarchive.com",
+        imagePath: "/assets/AEGIS_ Autonomous Puzzle Engine.png",
+        githubUrl: "https://github.com/Berkawaii/AiEscapeRoom",
+        liveUrl: "https://aiescaperoom.onrender.com/",
+      },
+      {
+        id: "lab-1791289152696",
+        title: {
+          en: "TACTICAL FOOTBALL SIM ENGINE",
+          tr: "AMATÖR FUTBOL MENAJERLİK MOTORU",
+        },
+        badgeText: {
+          en: "GAME ENGINE & SPORTS SIMULATION",
+          tr: "OYUN MOTORU & TAKTİKSEL SİMÜLASYON",
+        },
+        tabLabel: {
+          en: "HALISAHA MANAGER",
+          tr: "HALISAHA MANAGER",
+        },
+        period: "2026",
+        summary: {
+          en: "Text-and-data-driven amateur football management simulation inspired by classic managerial titles. Implements dynamic tactical setups, squad chemistry dynamics, attribute-based match calculation engines, and seasonal progression algorithms tailored for grassroot football culture.",
+          tr: "Klasik menajerlik oyunlarından (FM/CM) ilham alan, mahalle ve halı saha kültürünü derin taktiksel mekaniklerle harmanlayan simülasyon platformu. Oyuncu nitelik matrisleri, form/kondisyon döngüleri ve olasılık tabanlı anlık maç olaylarını hesaplayan bir simülasyon motoru barındırır.",
+        },
+        architectureDetails: {
+          en: "Deterministic 2.5D/text match simulation pipeline decoupled into Turn-Based Event Generator, Player Attribute Matrix, and Dynamic Tactical Bias Resolver.",
+          tr: "Olasılık Tabanlı Maç Olay Üreteci (Match Event Generator), Nitelik Matrisi (Attribute Matrix) ve Taktiksel Durum Yöneticisinden oluşan deterministik simülasyon hattı.",
+        },
+        impactMetricsEn: [
+          "Attribute-weighted probabilistic match engine calculating real-time pitch events per tick",
+          "State machine orchestrating tactical formations, condition fatigue, and in-game substitutions",
+          "Granular squad management: player ratings, dynamic morale systems, and grassroots scouting",
+          "Decoupled computational engine ensuring reproducible, seed-based match simulations",
+        ],
+        impactMetricsTr: [
+          "Oyuncu yeteneklerine ve taktiksel tercihlere göre anlık pozisyon ve gol olasılıklarını çözen maç motoru",
+          "Kondisyon, moral, sakatlık ve takım kimyası parametrelerini işleyen durum makineleri",
+          "Hamle ve taktik değişikliklerine anında tepki veren olay bazlı simülasyon döngüsü",
+          "Tekrar üretilebilir (seed-based) ve tutarlı maç sonuçları üreten deterministik algoritma",
+        ],
+        techStack: [
+          "Firebase",
+          "React 18",
+          "PostgreSQL",
+          "Tailwind CSS + PostCSS",
+          "Supabase",
+          "Vite 6",
+          "Node.js",
+        ],
+        imagePath: "/assets/Tactical Football Sim_ From Grassroots to Glory.png",
+        githubUrl: "https://github.com/Berkawaii/halisahaManager",
+        liveUrl: "https://halisaha-manager.web.app/",
+      },
+      {
+        id: "syntax-factory",
+        title: {
+          en: "Chastity Virtual Museum",
+          tr: "CHASTITY SANAL MÜZESİ",
+        },
+        badgeText: {
+          en: "Europeana",
+          tr: "Europeana",
+        },
+        tabLabel: {
+          en: "Chastity",
+          tr: "Chastity",
+        },
+        period: "2025",
+        summary: {
+          en: "Interactive online museum platform providing seamless exhibition exploration with high-performance digital displays.",
+          tr: "Yüksek performanslı dijital sergileme kabiliyetine sahip, akıcı bir sergi deneyimi sunan etkileşimli çevrim içi müze platformu.",
+        },
+        architectureDetails: {
+          en: "A chic, simple, and beautiful online virtual museum application powered by the Europeana API. This project allows users to browse through high-quality masterpieces, view detailed artwork metadata, and explore various art eras and artists in an elegant, responsive interface.",
+          tr: "Europeana API altyapısıyla güçlendirilmiş, zarif, sade ve estetik bir çevrim içi sanal müze uygulaması. Kullanıcıların yüksek kaliteli başyapıtları keşfetmesine, eserlerin ayrıntılı metaverilerini incelemesine ve zarif, duyarlı (responsive) bir arayüz üzerinden farklı sanat dönemleri ile sanatçıları deneyimlemesine olanak tanır.",
+        },
+        impactMetricsEn: [],
+        impactMetricsTr: [],
+        techStack: [
+          "React",
+          "HTML",
+          "Vanilla CSS",
+          "Axios",
+          "framer-motion",
+          "lucide-react",
+          "Vite",
+        ],
+        imagePath: "/assets/Chastity Virtual Museum Poster.png",
+        githubUrl: "https://github.com/Berkawaii/chastity",
+        liveUrl: "https://berkawaii.github.io/chastityWeb/",
       },
     ],
   },
@@ -966,7 +1197,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     education: [
       {
         id: "e-1",
-        period: "SEP 2021 - PRESENT (EXP. 2026)",
+        period: "SEP 2021 - AUG 2026",
         school: {
           en: "Anadolu University",
           tr: "Anadolu Üniversitesi",
@@ -1000,12 +1231,12 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "İLETİŞİME AÇIK",
     },
     headline: {
-      en: "READY TO ENGINEER BULLETPROOF SYSTEMS?",
-      tr: "DAYANIKLI SİSTEMLER İNŞA ETMEYE HAZIR MISINIZ?",
+      en: "PRODUCTION SYSTEMS BUILT FOR REAL ENTERPRISE LOAD.",
+      tr: "GERÇEK KURUMSAL YÜK İÇİN İNŞA EDİLMİŞ ÜRETİM SİSTEMLERİ.",
     },
     subtext: {
-      en: "Whether you need enterprise microservice consolidation, high-concurrency mobile field architectures, or resilient fintech backends, let us talk systems.",
-      tr: "Kurumsal mikroservis dönüşümü, yüksek eşzamanlı mobil saha mimarileri veya sağlam fintek arkayüzleri için sistemleri konuşalım.",
+      en: "From .NET 9 enterprise plugins, SAP/Panorama ERP pipelines, and React/Next.js internal portals to Flutter B2B mobile apps and WebRTC real-time prototypes — let us talk engineering.",
+      tr: ".NET 9 kurumsal eklentilerinden, SAP/Panorama ERP hatlarından ve React/Next.js portallarından Flutter B2B mobil uygulamalara ve WebRTC gerçek zamanlı prototiplere kadar mühendisliği konuşalım.",
     },
     ctaText: {
       en: "GET IN TOUCH",
@@ -1018,14 +1249,14 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
       tr: "İstanbul, Türkiye",
     },
     roleSummary: {
-      en: "Senior Full Stack & Mobile Architect. Engineered with .NET Core, Flutter, and Google Cloud Firestore.",
-      tr: "Kıdemli Full Stack & Mobil Mimarı. .NET Core, Flutter ve Google Cloud Firestore ile geliştirilmiştir.",
+      en: "Senior Full Stack & Mobile Engineer. Built with Next.js, TypeScript, and Google Cloud Firestore.",
+      tr: "Kıdemli Full Stack & Mobil Mühendisi. Next.js, TypeScript ve Google Cloud Firestore ile geliştirilmiştir.",
     },
     socialHeading: {
       en: "ONLINE PRESENCE:",
       tr: "ÇEVRİMİÇİ PROFİLLER:",
     },
-    linkedinUrl: "https://linkedin.com/in/berkayacar",
+    linkedinUrl: "https://linkedin.com/in/im-berkay",
     githubUrl: "https://github.com/Berkawaii",
   },
 };
@@ -1146,7 +1377,7 @@ export async function uploadImageFile(file: File): Promise<string> {
   return optimizedDataUrl;
 }
 
-export const SITE_CONTENT_LOCAL_STORAGE_KEY = "berkay_portfolio_site_content_v4";
+export const SITE_CONTENT_LOCAL_STORAGE_KEY = "berkay_portfolio_site_content_v6";
 
 export function sanitizeResumeUrl(url?: string): string {
   if (!url || url === "/berkay_acar_cv.pdf" || url.endsWith("/berkay_acar_cv.pdf") || url.endsWith("_cv.pdf")) {
@@ -1186,12 +1417,12 @@ export function getLocalSiteContent(): SiteContent {
             ...(parsed.caseStudiesSection || {}),
             heading: parsed.caseStudiesSection?.heading || DEFAULT_SITE_CONTENT.caseStudiesSection.heading,
             subheading: parsed.caseStudiesSection?.subheading || DEFAULT_SITE_CONTENT.caseStudiesSection.subheading,
-            items: (parsed.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem, i: number) => {
-              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items[i];
+            items: (parsed.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items.find((d) => d.id === item.id);
               return {
-                ...defaultItem,
+                ...(defaultItem || {}),
                 ...item,
-                role: item.role?.en?.includes("Architect") ? (defaultItem?.role || item.role) : (item.role || defaultItem?.role),
+                role: item.role || defaultItem?.role || { en: "Full Stack Engineer", tr: "Full Stack Mühendisi" },
                 problem: item.problem || defaultItem?.problem,
                 approach: item.approach || defaultItem?.approach,
                 tradeoffs: item.tradeoffs || defaultItem?.tradeoffs,
@@ -1212,8 +1443,8 @@ export function getLocalSiteContent(): SiteContent {
             ...(parsed.labSection || {}),
             heading: parsed.labSection?.heading || DEFAULT_SITE_CONTENT.labSection.heading,
             subheading: parsed.labSection?.subheading || DEFAULT_SITE_CONTENT.labSection.subheading,
-            items: (parsed.labSection?.items || DEFAULT_SITE_CONTENT.labSection.items).map((item: LabItem, i: number) => {
-              const defaultItem = DEFAULT_SITE_CONTENT.labSection.items[i];
+            items: (parsed.labSection?.items || DEFAULT_SITE_CONTENT.labSection.items).map((item: LabItem) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.labSection.items.find((d) => d.id === item.id);
               return {
                 ...item,
                 tabLabel: item.tabLabel || defaultItem?.tabLabel || {
@@ -1316,12 +1547,12 @@ export async function fetchSiteContent(): Promise<{
             ...(data.caseStudiesSection || {}),
             heading: data.caseStudiesSection?.heading || DEFAULT_SITE_CONTENT.caseStudiesSection.heading,
             subheading: data.caseStudiesSection?.subheading || DEFAULT_SITE_CONTENT.caseStudiesSection.subheading,
-            items: (data.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem, i: number) => {
-              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items[i];
+            items: (data.caseStudiesSection?.items || DEFAULT_SITE_CONTENT.caseStudiesSection.items).map((item: CaseStudyItem) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.caseStudiesSection.items.find((d) => d.id === item.id);
               return {
-                ...defaultItem,
+                ...(defaultItem || {}),
                 ...item,
-                role: item.role?.en?.includes("Architect") ? (defaultItem?.role || item.role) : (item.role || defaultItem?.role),
+                role: item.role || defaultItem?.role || { en: "Full Stack Engineer", tr: "Full Stack Mühendisi" },
                 problem: item.problem || defaultItem?.problem,
                 approach: item.approach || defaultItem?.approach,
                 tradeoffs: item.tradeoffs || defaultItem?.tradeoffs,
@@ -1342,8 +1573,8 @@ export async function fetchSiteContent(): Promise<{
             ...(data.labSection || {}),
             heading: data.labSection?.heading || DEFAULT_SITE_CONTENT.labSection.heading,
             subheading: data.labSection?.subheading || DEFAULT_SITE_CONTENT.labSection.subheading,
-            items: (data.labSection?.items || DEFAULT_SITE_CONTENT.labSection.items).map((item: LabItem, i: number) => {
-              const defaultItem = DEFAULT_SITE_CONTENT.labSection.items[i];
+            items: (data.labSection?.items || DEFAULT_SITE_CONTENT.labSection.items).map((item: LabItem) => {
+              const defaultItem = DEFAULT_SITE_CONTENT.labSection.items.find((d) => d.id === item.id);
               return {
                 ...item,
                 tabLabel: item.tabLabel || defaultItem?.tabLabel || {
